@@ -54,7 +54,7 @@ class _CartScreenState extends State<CartScreen> {
                           ),
                           child: const Icon(
                             Icons.delete,
-                            color: AppColor.whiteColor,
+                            color: AppColor.whiteColorFFF,
                           ),
                         ),
                         onDismissed: (direction) {

@@ -10,7 +10,7 @@ class LargeText extends StatelessWidget {
     super.key,
     required this.largeText,
     this.fontSize = 18,
-    this.color = AppColor.whiteColor,
+    this.color = AppColor.whiteColorFFF,
     this.fontWeight = FontWeight.w600,
   });
 
@@ -18,8 +18,12 @@ class LargeText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       largeText,
-      style:
-          TextStyle(fontSize: fontSize, fontWeight: fontWeight, color: color),
+      style: TextStyle(
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+        color: color,
+        fontFamily: 'Inter',
+      ),
     );
   }
 }

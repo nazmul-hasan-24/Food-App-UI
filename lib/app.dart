@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_grid_ui/controller_binder.dart';
+import 'package:food_grid_ui/ui/screens/auth/sign_in_screen.dart';
+import 'package:food_grid_ui/ui/screens/detail_product_screen.dart';
 import 'package:food_grid_ui/ui/screens/main_bottom_nav/main_bottom_nav.dart';
 import 'package:food_grid_ui/ui/screens/splash_screen.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
@@ -22,17 +24,17 @@ class FoodGrid extends StatelessWidget {
             ),
         textTheme: const TextTheme(
           titleMedium: TextStyle(
-            color: AppColor.whiteColor,
+            color: AppColor.whiteColorFFF,
             fontSize: 18,
             fontWeight: FontWeight.w600,
           ),
           titleLarge: TextStyle(
-            color: AppColor.whiteColor,
+            color: AppColor.whiteColorFFF,
             fontSize: 20,
             fontWeight: FontWeight.w600,
           ),
           bodyLarge: TextStyle(
-            color: AppColor.whiteColor,
+            color: AppColor.whiteColorFFF,
             fontSize: 16,
             fontWeight: FontWeight.w400,
           ),

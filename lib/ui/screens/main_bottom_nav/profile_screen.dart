@@ -45,7 +45,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     vertical: 15,
                   ),
                   decoration: const BoxDecoration(
-                    color: AppColor.backgroundColor1,
+                    color: AppColor.backgroundColor0d0d,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(40),
                       topRight: Radius.circular(40),
@@ -62,7 +62,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             alignment: Alignment.topCenter,
                             height: 3.55,
                             width: 60,
-                            color: AppColor.backgroundColor2,
+                            color: AppColor.backgroundColor2525,
                           ),
                         ),
                         verticalHeight(50),
@@ -109,7 +109,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         Container(
                           height: height / 12.68,
                           decoration: BoxDecoration(
-                            color: AppColor.backgroundColor2,
+                            color: AppColor.backgroundColor2525,
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: ListTile(
@@ -135,7 +135,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           padding:
                               EdgeInsets.all(height / 90.75).copyWith(left: 10),
                           decoration: BoxDecoration(
-                            color: AppColor.backgroundColor2,
+                            color: AppColor.backgroundColor2525,
                             borderRadius: BorderRadius.circular(height / 73.75),
                           ),
                           // padding: EdgeInsets.all(29),
@@ -187,7 +187,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   child: const LargeText(
                                     largeText: 'Buy Again',
                                     fontSize: 10,
-                                    color: AppColor.textBlack,
+                                    color: AppColor.textBlack000,
                                   ))
                             ],
                           ),

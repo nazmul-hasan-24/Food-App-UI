@@ -81,7 +81,7 @@ class PlaceOdredWidget extends StatelessWidget {
             },
             text: "Place My Order",
             textColour: AppColor.primaryColor,
-            buttonBackGrounColor: AppColor.whiteColor,
+            buttonBackGrounColor: AppColor.whiteColorFFF,
             width: double.infinity,
           )
         ],

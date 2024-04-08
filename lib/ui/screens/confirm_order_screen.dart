@@ -81,7 +81,7 @@ class ConfirmOrderScreen extends StatelessWidget {
                           ),
                           const Flexible(
                             child: SmallText(
-                                textColor: AppColor.whiteColor,
+                                textColor: AppColor.whiteColorFFF,
                                 smallText:
                                     "55/B, Mohammadpur, Dhaka- 1202, Bnagladesh, "),
                           ),
@@ -149,7 +149,7 @@ class ConfirmOrderScreen extends StatelessWidget {
                           ),
                           const Flexible(
                             child: SmallText(
-                                textColor: AppColor.whiteColor,
+                                textColor: AppColor.whiteColorFFF,
                                 smallText: "78963521450888 "),
                           ),
                         ],

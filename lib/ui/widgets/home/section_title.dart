@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
+import 'package:food_grid_ui/ui/widgets/large_text.dart';
 
 class SectionTitle extends StatelessWidget {
   const SectionTitle({super.key, required this.title, required this.onTap});
@@ -12,21 +13,19 @@ class SectionTitle extends StatelessWidget {
       // alignment: WrapAlignment.spaceBetween,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          title,
-          style: const TextStyle(
-              color: AppColor.whiteColor,
-              fontWeight: FontWeight.w700,
-              fontSize: 17),
+        LargeText(
+          largeText: title,
+          fontSize: 15,
         ),
         TextButton(
           onPressed: onTap,
           child: const Text(
             'View More',
             style: TextStyle(
-              color: AppColor.primaryColor,
-              fontWeight: FontWeight.bold,
-              fontSize: 17,
+              height: 0,
+              color: Color(0xFFDA6317),
+              fontWeight: FontWeight.w400,
+              fontSize: 12,
             ),
           ),
         )

@@ -13,7 +13,7 @@ class BodyBackground extends StatelessWidget {
         children: [
           Image.asset(
             // color: Colors.red,
-            colorBlendMode: BlendMode.dstOut,
+            // colorBlendMode: BlendMode.dstOut,
             ImagePath.recBackgroundImage,
             fit: BoxFit.fill,
           ),

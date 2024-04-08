@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_grid_ui/ui/screens/main_bottom_nav/main_bottom_nav.dart';
 import 'package:food_grid_ui/ui/utils/assets_path/images_path.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
+import 'package:food_grid_ui/ui/utils/dimensions.dart';
 import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
 import 'package:food_grid_ui/ui/widgets/elevated_button.dart';
 import 'package:get/get.dart';
@@ -15,38 +16,46 @@ class ProfileSetpuCompleted extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.black,
         body: Padding(
-          padding: const EdgeInsets.all(18),
+          padding: EdgeInsets.symmetric(
+              horizontal: Dimensions.width40, vertical: Dimensions.height153),
           child: Column(
             children: [
-              verticalHeight(120),
-              CircleAvatar(
-                radius: 40,
-                child: Image.asset(ImagePath.done),
+              ClipRRect(
+                child: Image.asset(
+                  ImagePath.done,
+                  fit: BoxFit.fill,
+                ),
               ),
-              verticalHeight(20),
-              const Text(
+              verticalHeight(Dimensions.height33),
+              Text(
                 "Congrast!",
                 style: TextStyle(
-                    color: Colors.amber,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold),
+                  letterSpacing: 1,
+                  color: AppColor.primaryColor,
+                  fontSize: Dimensions.height33,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
-              verticalHeight(14),
-              const Text(
+              verticalHeight(Dimensions.font12),
+              Text(
                 "Your Profile Is Ready To Use!",
                 style: TextStyle(
-                    color: Colors.amber,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500),
+                  letterSpacing: 1,
+                  color: AppColor.whiteColorFFF,
+                  fontSize: Dimensions.height18,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
               verticalHeight(40),
               Center(
                 child: ElevatedButtonWidget(
                   text: "Try Order",
                   buttonBackGrounColor: AppColor.primaryColor,
-                  width: 160,
+                  textColour: AppColor.textBlack000,
                   onTab: () {
-                    Get.offAll(() => const MainBottomNavScreen());
+                    Get.offAll(
+                      () => const MainBottomNavScreen(),
+                    );
                   },
                 ),
               )

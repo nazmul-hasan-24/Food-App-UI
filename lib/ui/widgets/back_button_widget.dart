@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_grid_ui/ui/utils/dimensions.dart';
 
 class BackButtonWidget extends StatelessWidget {
   final Function() onTab;
@@ -14,24 +15,18 @@ class BackButtonWidget extends StatelessWidget {
 
       padding: const EdgeInsets.all(0),
       style: IconButton.styleFrom(
-        minimumSize: Size(width / 8.15, height / 21.34),
+        minimumSize: Size(width / 9.409, height / 23.578),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
         padding: const EdgeInsets.only(left: 10),
-        backgroundColor: const Color.fromRGBO(47, 40, 35, 0.66),
+        backgroundColor: const Color(0xFF2F2823).withOpacity(0.6),
       ),
-      // style: ButtonStyle(
-      //   shape: MaterialStatePropertyAll<OutlinedBorder>(
-      //       RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
-      //   backgroundColor: const MaterialStatePropertyAll<Color>(
-      //       Color.fromARGB(255, 46, 35, 35)),
-      // ),
       onPressed: onTab,
       icon: const Icon(
         Icons.arrow_back_ios,
-        color: Colors.orange,
-        size: 24,
+        color: Color(0xFFDA6317),
+        size: 15,
       ),
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_grid_ui/ui/screens/auth/second_page.dart';
+import 'package:food_grid_ui/ui/screens/auth/onboading1_screen.dart';
 import 'package:food_grid_ui/ui/utils/assets_path/images_path.dart';
 import 'package:get/get.dart';
 
@@ -30,5 +30,5 @@ class _SplashScreenState extends State<SplashScreen> {
 
 Future<void> goToNextScreen() async {
   Future.delayed(const Duration(seconds: 3))
-      .then((value) => Get.offAll(() => const OnBoding1()));
+      .then((value) => Get.offAll(() => const OnBoadingScreen1()));
 }

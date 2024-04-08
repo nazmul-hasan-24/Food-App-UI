@@ -72,7 +72,7 @@ class VoucherPromoScreen extends StatelessWidget {
                                   width: width / 3.7,
                                   height: 35,
                                   decoration: BoxDecoration(
-                                    color: AppColor.whiteColor,
+                                    color: AppColor.whiteColorFFF,
                                     borderRadius: BorderRadius.circular(12),
                                     boxShadow: [
                                       BoxShadow(

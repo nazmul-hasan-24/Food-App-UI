@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
 
-SizedBox filledButtonWidget({
+FilledButton filledButtonWidget({
   required Widget widget,
   required VoidCallback onPress,
   required Color color,
+  double size = 25,
 }) {
-  return SizedBox(
-    height: 60,
-    width: 60,
-    child: FilledButton(
-      style: ButtonStyle(
-          backgroundColor: MaterialStatePropertyAll(color),
-          minimumSize: const MaterialStatePropertyAll(Size(25, 25)),
-          padding: const MaterialStatePropertyAll(EdgeInsets.all(10)),
-          shape: MaterialStatePropertyAll(
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)))),
-      onPressed: onPress,
-      child: widget,
+  return FilledButton(
+    style: ButtonStyle(
+      alignment: Alignment.topCenter,
+      backgroundColor: MaterialStatePropertyAll(color),
+      minimumSize: MaterialStatePropertyAll(Size(size, size)),
+      padding: const MaterialStatePropertyAll(
+        EdgeInsets.all(10),
+      ),
+      shape: MaterialStatePropertyAll(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+        ),
+      ),
     ),
+    onPressed: onPress,
+    child: widget,
   );
 }

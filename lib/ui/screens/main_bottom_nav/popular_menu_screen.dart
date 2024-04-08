@@ -56,7 +56,7 @@ class _PopularMenuScreenState extends State<PopularMenuScreen> {
                     selectedIndex: mainBottomNavController.currentIndex,
                     textStyle: const TextStyle(
                         fontWeight: FontWeight.w400,
-                        color: AppColor.whiteColor,
+                        color: AppColor.whiteColorFFF,
                         fontSize: 13),
                     tabBorderRadius: 10,
                     curve: Curves.easeOutExpo, // tab animation curves
@@ -77,7 +77,7 @@ class _PopularMenuScreenState extends State<PopularMenuScreen> {
                         padding: const EdgeInsets.all(11),
                         icon: Icons.home,
                         iconColor: AppColor.primaryColor,
-                        textColor: AppColor.whiteColor,
+                        textColor: AppColor.whiteColorFFF,
                         text: 'Home',
                       ),
                       GButton(
@@ -86,7 +86,7 @@ class _PopularMenuScreenState extends State<PopularMenuScreen> {
                         icon: Icons.person_outline,
                         text: 'Profile',
                         iconColor: AppColor.primaryColor,
-                        textColor: AppColor.whiteColor,
+                        textColor: AppColor.whiteColorFFF,
                       ),
                       const GButton(
                         // onPressed: () {
@@ -98,7 +98,7 @@ class _PopularMenuScreenState extends State<PopularMenuScreen> {
                         icon: Icons.shopping_cart_checkout,
                         text: 'Cart',
                         iconColor: AppColor.primaryColor,
-                        textColor: AppColor.whiteColor,
+                        textColor: AppColor.whiteColorFFF,
                       ),
                       GButton(
                         onPressed: () {},
@@ -106,7 +106,7 @@ class _PopularMenuScreenState extends State<PopularMenuScreen> {
                         icon: Icons.message_outlined,
                         text: 'Chat',
                         iconColor: AppColor.primaryColor,
-                        textColor: AppColor.whiteColor,
+                        textColor: AppColor.whiteColorFFF,
                       ),
                     ],
                   );

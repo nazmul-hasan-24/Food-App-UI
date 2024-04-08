@@ -6,8 +6,8 @@ import 'package:food_grid_ui/ui/widgets/home/section_title.dart';
 import 'package:food_grid_ui/ui/widgets/large_text.dart';
 import 'package:food_grid_ui/ui/widgets/small_text.dart';
 
-class DetailProductScreen extends StatelessWidget {
-  const DetailProductScreen({super.key});
+class DetailMenuScreen extends StatelessWidget {
+  const DetailMenuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

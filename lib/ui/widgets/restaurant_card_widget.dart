@@ -33,7 +33,7 @@ class RestaurantCard extends StatelessWidget {
           const Text(
             "BUTCHER",
             style: TextStyle(
-                color: AppColor.whiteColor,
+                color: AppColor.whiteColorFFF,
                 fontSize: 18,
                 fontWeight: FontWeight.w500),
           ),

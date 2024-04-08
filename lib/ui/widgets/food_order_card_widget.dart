@@ -85,13 +85,13 @@ class _FoodOrderCardWidgetState extends State<FoodOrderCardWidget> {
                   },
                   child: const Icon(
                     Icons.remove,
-                    color: AppColor.whiteColor,
+                    color: AppColor.whiteColorFFF,
                   ),
                 ),
               ),
               Text(
                 "$item",
-                style: const TextStyle(color: AppColor.whiteColor),
+                style: const TextStyle(color: AppColor.whiteColorFFF),
               ),
               GestureDetector(
                 onTap: () {
@@ -114,7 +114,7 @@ class _FoodOrderCardWidgetState extends State<FoodOrderCardWidget> {
                   ),
                   child: const Icon(
                     Icons.add,
-                    color: AppColor.whiteColor,
+                    color: AppColor.whiteColorFFF,
                   ),
                 ),
               ),

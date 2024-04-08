@@ -9,7 +9,7 @@ class HelperText extends StatelessWidget {
       {super.key,
       required this.bigText,
       this.fontSize,
-      this.textColour = AppColor.whiteColor});
+      this.textColour = AppColor.whiteColorFFF});
 
   @override
   Widget build(BuildContext context) {

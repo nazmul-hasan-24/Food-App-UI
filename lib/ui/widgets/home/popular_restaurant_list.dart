@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:food_grid_ui/ui/screens/detail_menu_screen.dart';
 import 'package:food_grid_ui/ui/widgets/home/menu_card_widget.dart';
+import 'package:get/get.dart';
 
 class PopularRestaurantList extends StatelessWidget {
   const PopularRestaurantList({super.key});
@@ -15,7 +17,11 @@ class PopularRestaurantList extends StatelessWidget {
         itemCount: 20,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return const PopularMenuCardWidget();
+          return GestureDetector(
+              onTap: () => Get.to(
+                    () => const DetailMenuScreen(),
+                  ),
+              child: const PopularMenuCardWidget());
         },
       ),
     );

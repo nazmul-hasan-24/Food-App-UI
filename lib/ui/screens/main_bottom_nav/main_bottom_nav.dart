@@ -5,6 +5,7 @@ import 'package:food_grid_ui/ui/screens/main_bottom_nav/home2.dart';
 import 'package:food_grid_ui/ui/screens/main_bottom_nav/message_screen.dart';
 import 'package:food_grid_ui/ui/screens/main_bottom_nav/profile_screen.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
+import 'package:food_grid_ui/ui/utils/dimensions.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -39,15 +40,18 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              margin: const EdgeInsets.all(30).copyWith(left: 10, right: 10),
-              // padding: const EdgeInsets.symmetric(horizontal: 10),
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 59, 59, 57),
-                borderRadius: BorderRadius.horizontal(
-                  right: Radius.circular(10),
-                  left: Radius.circular(10),
-                ),
+              margin: EdgeInsets.symmetric(
+                horizontal: Dimensions.width25,
+              ).copyWith(bottom: Dimensions.height14),
+              padding: EdgeInsets.symmetric(
+                horizontal: Dimensions.width15,
+                vertical: Dimensions.height18,
               ),
+              decoration: BoxDecoration(
+                  color: AppColor.backgroundColor2525,
+                  borderRadius: BorderRadius.circular(
+                    Dimensions.height18,
+                  )),
               height: 70,
               child: GetBuilder<MainBottomNavController>(
                 builder: (mainBottomNavController) {
@@ -56,39 +60,50 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
                       mainBottomNavController.changeIndex(value);
                     },
                     selectedIndex: mainBottomNavController.currentIndex,
-                    textStyle: const TextStyle(
-                        fontWeight: FontWeight.w400,
-                        color: AppColor.whiteColor,
-                        fontSize: 13),
-                    tabBorderRadius: 10,
+
+                    textStyle: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      color: AppColor.whiteColorFFF,
+                      fontSize: Dimensions.font12,
+                    ),
+                    tabBorderRadius: Dimensions.height14,
                     curve: Curves.easeOutExpo, // tab animation curves
                     duration: const Duration(
-                        milliseconds: 500), // tab animation duration
-                    gap: 8, // the tab button gap between icon and text
+                      milliseconds: 700,
+                    ), // tab animation duration
+                    gap: Dimensions
+                        .width10, // the tab button gap between icon and text
+
                     color: AppColor.primaryColor, // unselected icon color
+
                     activeColor:
                         AppColor.primaryColor, // selected icon and text color
-                    iconSize: 20, // tab button icon size
-                    tabBackgroundColor: Colors.amber.shade200
-                        .withOpacity(0.1), // selected tab background color
+
+                    iconSize: Dimensions.iconWidth24, // tab button icon size
+
+                    tabBackgroundColor: const Color(0xFF4B4427)
+                        .withOpacity(0.28), // selected tab background color
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 5), // navigation bar padding
+                      horizontal: 25,
+                      vertical: 8,
+                    ), // navigation bar padding
                     tabs: [
                       GButton(
+                        active: true,
                         onPressed: () {},
-                        padding: const EdgeInsets.all(11),
                         icon: Icons.home,
                         iconColor: AppColor.primaryColor,
-                        textColor: AppColor.whiteColor,
+                        textColor: AppColor.whiteColorFFF,
                         text: 'Home',
                       ),
                       GButton(
+                        // padding:
+                        // EdgeInsets.symmetric(horizontal: 5, vertical: 8),
                         onPressed: () {},
-                        padding: const EdgeInsets.all(11),
                         icon: Icons.person_outline,
                         text: 'Profile',
                         iconColor: AppColor.primaryColor,
-                        textColor: AppColor.whiteColor,
+                        textColor: AppColor.whiteColorFFF,
                       ),
                       const GButton(
                         // onPressed: () {
@@ -100,15 +115,15 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
                         icon: Icons.shopping_cart_checkout,
                         text: 'Cart',
                         iconColor: AppColor.primaryColor,
-                        textColor: AppColor.whiteColor,
+                        textColor: AppColor.whiteColorFFF,
                       ),
                       GButton(
                         onPressed: () {},
-                        padding: const EdgeInsets.all(11),
+                        // padding: const EdgeInsets.all(20),
                         icon: Icons.message_outlined,
                         text: 'Chat',
                         iconColor: AppColor.primaryColor,
-                        textColor: AppColor.whiteColor,
+                        textColor: AppColor.whiteColorFFF,
                       ),
                     ],
                   );

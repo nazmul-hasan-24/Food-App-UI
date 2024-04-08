@@ -65,7 +65,8 @@ class CheckoutScreen extends StatelessWidget {
                                     const LargeText(
                                         largeText: "Special Deal For Octorber"),
                                     ElevatedButtonWidget(
-                                      buttonBackGrounColor: AppColor.whiteColor,
+                                      buttonBackGrounColor:
+                                          AppColor.whiteColorFFF,
                                       onTab: () {},
                                       // width: 140,
                                       width: 120,

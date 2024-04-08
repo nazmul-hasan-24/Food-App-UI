@@ -2,35 +2,31 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:food_grid_ui/ui/utils/assets_path/images_path.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
-import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
+import 'package:food_grid_ui/ui/utils/dimensions.dart';
 import 'package:food_grid_ui/ui/widgets/elevated_button.dart';
 import 'package:food_grid_ui/ui/widgets/helper_text.dart';
 
 class CarouseSliderWidget extends StatelessWidget {
   const CarouseSliderWidget({
     super.key,
-    required this.height,
   });
-
-  final double height;
 
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
         items: [
-          ImagePath.food1,
+          ImagePath.onFood1,
           ImagePath.food2,
           ImagePath.food3,
           ImagePath.food4
         ].map((e) {
           return Builder(builder: (BuildContext context) {
             return Container(
-              height: height * 0.2,
-              padding: const EdgeInsets.all(10).copyWith(left: 012, right: 12),
+              height: Dimensions.height180,
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
                   color: AppColor.primaryColor,
-                  borderRadius: BorderRadius.circular(10)),
+                  borderRadius: BorderRadius.circular(Dimensions.height15)),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -44,14 +40,14 @@ class CarouseSliderWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        verticalHeight(height * 0.03),
+                        // verticalHeight(Dimensions.height180),
                         const HelperText(
                           bigText: 'Specila Deal For March',
                           fontSize: 0,
                         ),
-                        verticalHeight(height * 0.01),
+                        // verticalHeight(Dimensions.height180),
                         ElevatedButtonWidget(
-                          buttonBackGrounColor: AppColor.whiteColor,
+                          buttonBackGrounColor: AppColor.whiteColorFFF,
                           onTab: () {},
                           width: 140,
                           textColour: AppColor.primaryColor,
@@ -66,7 +62,7 @@ class CarouseSliderWidget extends StatelessWidget {
           });
         }).toList(),
         options: CarouselOptions(
-          height: height * 0.22,
+          // height: Dimensions.height180,
           viewportFraction: 1,
           initialPage: 0,
           enableInfiniteScroll: true,

@@ -19,7 +19,7 @@ class SearchWidget extends StatelessWidget {
                 backgroundColor: AppColor.lightBlack,
                 label: Text(
                   e,
-                  style: const TextStyle(color: AppColor.whiteColor),
+                  style: const TextStyle(color: AppColor.whiteColorFFF),
                 ),
               ),
             ),

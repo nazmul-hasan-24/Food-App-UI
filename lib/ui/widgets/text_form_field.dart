@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_grid_ui/ui/screens/search_screen.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
-import 'package:get/get.dart';
+import 'package:food_grid_ui/ui/utils/dimensions.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String hintText;
@@ -19,36 +18,51 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      // expands: true,
+      // maxLines: 5,
       keyboardType: TextInputType.text,
-      onTap: () => Get.to(() => const SearchScreen(
-            textInputType: TextInputType.text,
-          )),
+      // onTap: () => Get.to(() => const SearchScreen(
+      //       textInputType: TextInputType.text,
+      //     )),
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
-        alignLabelWithHint: true,
+        // alignLabelWithHint: true,
         hintTextDirection: TextDirection.ltr,
-        contentPadding: EdgeInsets.zero,
-        prefixIcon: Padding(
-          padding: const EdgeInsets.only(
-            left: 5,
-          ),
-          child: Icon(prefixIcon),
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: Dimensions.width25,
+          vertical: Dimensions.height18,
         ),
-        suffixIcon: Padding(
-          padding: const EdgeInsets.only(right: 22),
-          child: Icon(suffixIcon),
+        prefixIcon: Icon(
+          prefixIcon,
+          size: Dimensions.iconWidth24,
         ),
-        suffixIconColor: AppColor.whiteColor,
-        prefixIconColor: AppColor.philippineGray,
-        border: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(8.0),
-          ),
+        suffixIcon: Icon(suffixIcon),
+        // prefixIconConstraints: BoxConstraints(minHeight: 15, minWidth: 15),
+        suffixIconColor: AppColor.a1a1IconColor,
+        prefixIconColor: AppColor.a1a1IconColor,
+
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.circular(Dimensions.height8),
         ),
+
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.circular(Dimensions.height8),
+        ),
+
+        border: OutlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.circular(Dimensions.height8),
+        ),
+
         hintText: hintText,
-        fillColor: const Color.fromARGB(255, 46, 43, 43),
-        filled: false,
-        hintStyle: const TextStyle(color: AppColor.philippineGray),
+        fillColor: AppColor.backgroundColor2525,
+        filled: true,
+        hintStyle: TextStyle(
+            color: AppColor.philippineGrayC4C4,
+            fontSize: Dimensions.height14,
+            letterSpacing: 0.5),
       ),
     );
   }
