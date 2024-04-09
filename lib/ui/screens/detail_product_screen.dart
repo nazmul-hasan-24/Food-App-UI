@@ -233,7 +233,7 @@ class DetailProductScreen extends StatelessWidget {
                           itemBuilder: (context, index) {
                             return Container(
                               alignment: Alignment.center,
-                              height: height / 6.8396946564885,
+                              height: height / 6.4,
                               padding: EdgeInsets.symmetric(
                                   vertical: height / 42.666,
                                   horizontal: width / 29.571),
@@ -283,7 +283,7 @@ class DetailProductScreen extends StatelessWidget {
                                             fontSize: height / 74.666,
                                             fontWeight: FontWeight.w400,
                                             overflow: TextOverflow.ellipsis,
-                                            color: Color(0xFFDFDFDF),
+                                            color: const Color(0xFFDFDFDF),
                                           ),
                                         ),
                                       ],

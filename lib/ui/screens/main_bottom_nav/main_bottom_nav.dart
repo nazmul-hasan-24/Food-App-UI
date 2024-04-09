@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_grid_ui/presentation/controllers/main_nav_controller.dart';
 import 'package:food_grid_ui/ui/screens/main_bottom_nav/cart_screen.dart';
-import 'package:food_grid_ui/ui/screens/main_bottom_nav/home2.dart';
+import 'package:food_grid_ui/ui/screens/main_bottom_nav/all_res_list_screen.dart';
 import 'package:food_grid_ui/ui/screens/main_bottom_nav/message_screen.dart';
 import 'package:food_grid_ui/ui/screens/main_bottom_nav/profile_screen.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';

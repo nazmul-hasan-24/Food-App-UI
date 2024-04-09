@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_grid_ui/ui/utils/assets_path/images_path.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
+import 'package:food_grid_ui/ui/utils/dimensions.dart';
 import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
 import 'package:food_grid_ui/ui/widgets/body_background.dart';
 import 'package:food_grid_ui/ui/widgets/back_button_widget.dart';
@@ -32,47 +33,52 @@ class NotificationScreen extends StatelessWidget {
                   "Notification",
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
-                verticalHeight(11),
+                verticalHeight(Dimensions.font12),
                 Expanded(
                   child: ListView.builder(
-                      shrinkWrap: true,
-                      primary: false,
-                      itemCount: 10,
-                      itemBuilder: (context, int index) {
-                        return Container(
-                          margin: const EdgeInsets.all(5).copyWith(bottom: 14),
-                          constraints: const BoxConstraints.expand(height: 120),
-                          decoration: BoxDecoration(
-                              color: AppColor.lightBlack,
-                              borderRadius: BorderRadius.circular(15)),
-                          padding: const EdgeInsets.symmetric(horizontal: 12),
-                          // height: 50,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              ClipRRect(
-                                  child: Image.asset(
-                                ImagePath.done,
-                                width: 50,
-                                height: 50,
-                              )),
-                              horizontal(18),
-                              const Flexible(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    LargeText(
-                                        largeText:
-                                            "Your order has taken by driver"),
-                                    SmallText(smallText: "Recently")
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                        );
-                      }),
+                    shrinkWrap: true,
+                    primary: false,
+                    itemCount: 10,
+                    itemBuilder: (context, int index) {
+                      return Container(
+                        margin: EdgeInsets.all(5)
+                            .copyWith(bottom: Dimensions.height14),
+                        constraints:
+                            BoxConstraints.expand(height: Dimensions.height110),
+                        decoration: BoxDecoration(
+                            color: AppColor.lightBlack,
+                            borderRadius: BorderRadius.circular(15)),
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                        // height: 50,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            ClipRRect(
+                                child: Image.asset(
+                              ImagePath.done,
+                              width: Dimensions.width47,
+                              height: Dimensions.height50,
+                            )),
+                            horizontal(Dimensions.width15),
+                            Flexible(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  LargeText(
+                                      fontSize: Dimensions.height16,
+                                      largeText:
+                                          "Your order has taken by driver"),
+                                  verticalHeight(7),
+                                  SmallText(smallText: "Recently")
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      );
+                    },
+                  ),
                 )
               ],
             ),

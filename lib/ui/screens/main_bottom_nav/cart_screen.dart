@@ -27,6 +27,7 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: AppColor.backgroundColor0d0d,
         body: BodyBackground(
           child: Padding(
             padding: const EdgeInsets.all(12.0),
