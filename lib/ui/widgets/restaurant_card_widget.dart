@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_grid_ui/ui/utils/assets_path/images_path.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
+import 'package:food_grid_ui/ui/utils/dimensions.dart';
 import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
 
 class RestaurantCard extends StatelessWidget {
@@ -13,6 +14,8 @@ class RestaurantCard extends StatelessWidget {
 
     // List res = [{}];
     return Container(
+      height: Dimensions.height180,
+      width: Dimensions.butonWidth157,
       padding: const EdgeInsets.all(12),
       alignment: Alignment.center,
       decoration: BoxDecoration(

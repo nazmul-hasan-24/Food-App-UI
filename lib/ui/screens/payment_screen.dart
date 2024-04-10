@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:food_grid_ui/ui/screens/auth/payment_page.dart';
+import 'package:food_grid_ui/ui/screens/eiit_payment_screen.dart';
 import 'package:food_grid_ui/ui/screens/location_screen.dart';
 import 'package:food_grid_ui/ui/utils/assets_path/images_path.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
+import 'package:food_grid_ui/ui/utils/dimensions.dart';
 import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
 import 'package:food_grid_ui/ui/widgets/body_background.dart';
 import 'package:food_grid_ui/ui/widgets/back_button_widget.dart';
@@ -11,13 +12,14 @@ import 'package:food_grid_ui/ui/widgets/place_order_widget.dart';
 import 'package:food_grid_ui/ui/widgets/small_text.dart';
 import 'package:get/get.dart';
 
-class ConfirmOrderScreen extends StatelessWidget {
-  const ConfirmOrderScreen({super.key});
+class PaymentsScreen extends StatelessWidget {
+  const PaymentsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: AppColor.backgroundColor0d0d,
         body: BodyBackground(
           child: Padding(
             padding: const EdgeInsets.all(16),
@@ -30,7 +32,10 @@ class ConfirmOrderScreen extends StatelessWidget {
                   },
                 ),
                 verticalHeight(20),
-                const LargeText(largeText: "Confirm Order"),
+                LargeText(
+                  largeText: "Confirm Order",
+                  fontSize: Dimensions.height25,
+                ),
                 verticalHeight(14),
                 Container(
                   alignment: Alignment.center,
@@ -67,8 +72,8 @@ class ConfirmOrderScreen extends StatelessWidget {
                           Container(
                             margin: const EdgeInsets.all(5).copyWith(right: 12),
                             padding: const EdgeInsets.all(2),
-                            decoration: BoxDecoration(
-                                color: Colors.amber.shade300,
+                            decoration: const BoxDecoration(
+                                color: Color(0xFFFFF14D),
                                 shape: BoxShape.circle),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(20),
@@ -109,7 +114,7 @@ class ConfirmOrderScreen extends StatelessWidget {
                           const SmallText(smallText: "Payment Method"),
                           GestureDetector(
                             onTap: () => Get.to(
-                              () => const PaymentMethodScreen(),
+                              () => const EditPaymentScreen(),
                             ),
                             child: const SmallText(
                               smallText: "Edit",
@@ -133,18 +138,19 @@ class ConfirmOrderScreen extends StatelessWidget {
                                     const EdgeInsets.all(5).copyWith(right: 12),
                                 padding: const EdgeInsets.all(2),
                                 decoration: const BoxDecoration(
-                                    color: AppColor.primaryColor,
+                                    // color: AppColor.primaryColor,
                                     shape: BoxShape.circle),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(20),
                                   child: Image.asset(
+                                    color: AppColor.whiteColorFFF,
                                     ImagePath.paypal,
-                                    height: 20,
-                                    width: 20,
+                                    height: 21,
+                                    width: 85,
                                   ),
                                 ),
                               ),
-                              const LargeText(largeText: "PayPal")
+                              // const LargeText(largeText: "PayPal")
                             ],
                           ),
                           const Flexible(

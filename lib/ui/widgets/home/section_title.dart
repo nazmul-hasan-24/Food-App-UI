@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:food_grid_ui/ui/widgets/large_text.dart';
 
 class SectionTitle extends StatelessWidget {

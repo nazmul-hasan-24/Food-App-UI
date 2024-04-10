@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:food_grid_ui/ui/utils/dimensions.dart';
 
 class BackButtonWidget extends StatelessWidget {
   final Function() onTab;

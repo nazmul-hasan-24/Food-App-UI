@@ -18,7 +18,7 @@ class MainBottomNavScreen extends StatefulWidget {
 
 class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   final List<Widget> _screenList = const [
-    Home2(),
+    AllResListScreen(),
     ProfileScreen(),
     CartScreen(),
     MessingScreen(),
@@ -105,12 +105,12 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
                         iconColor: AppColor.primaryColor,
                         textColor: AppColor.whiteColorFFF,
                       ),
-                      const GButton(
-                        // onPressed: () {
-                        //   Get.to(
-                        //     () => const CartScreen(),
-                        //   );
-                        // },
+                      GButton(
+                        onPressed: () {
+                          Get.to(
+                            () => const CartScreen(),
+                          );
+                        },
                         padding: EdgeInsets.all(11),
                         icon: Icons.shopping_cart_checkout,
                         text: 'Cart',

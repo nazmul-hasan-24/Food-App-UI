@@ -17,7 +17,7 @@ class ImagePath {
   static String resLogo2 = _imagePath(imageName: 'res_logo2');
   static String resLogo3 = _imagePath(imageName: 'res_logo6');
   static String myPhoto = _imagePath(imageName: 'naz');
-  static String paypal = _imagePath(imageName: 'paypal');
+  // static String paypal = _imagePath(imageName: 'paypal');
   static String location = _imagePath(imageName: 'location');
   static String pk = _imagePath(imageName: 'pk');
   static String voucher = _imagePath(imageName: 'voucher');
@@ -28,4 +28,8 @@ class ImagePath {
   static String res2 = _imagePath(imageName: 'res1');
   static String burger = _imagePath(imageName: 'burger');
   static String recBack = _imagePath(imageName: 'rec');
+  static String locationBack = _imagePath(imageName: 'loc1');
+  static String visa = _imagePath(imageName: 'visa');
+  static String paypal = _imagePath(imageName: 'paypal');
+  static String payoneer = _imagePath(imageName: 'payoneer');
 }

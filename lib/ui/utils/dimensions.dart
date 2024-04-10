@@ -5,8 +5,9 @@ class Dimensions {
   static final screenWidth = Get.context!.width;
   //empty Space
   static final double height100 = screenHeight / 8.96;
+  // static final double height60 = screenHeight / 14.933;
   static final double height80 = screenHeight / 11.2;
-
+  static final double height223 = screenHeight / 4.017;
   static final double height110 = screenHeight / 8.145;
   static final double height44 = screenHeight / 20.363;
   static final double height40 = screenHeight / 22.4;
@@ -31,6 +32,7 @@ class Dimensions {
   static final double height52 = screenHeight / 17.2030;
   static final double height180 = screenHeight / 4.9777777;
   static final double height15 = screenHeight / 59.733333;
+  static final double height60 = screenHeight / 16.6;
 
   // Radious
 
@@ -54,4 +56,6 @@ class Dimensions {
   static final double width293 = screenWidth / 1.412;
   static final double width61 = screenWidth / 6.786;
   static final double width30 = screenWidth / 13.8;
+  static final double width167 = screenWidth / 2.479;
+  static final double width100 = screenWidth / 4.14;
 }

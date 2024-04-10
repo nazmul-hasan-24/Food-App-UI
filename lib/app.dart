@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_grid_ui/controller_binder.dart';
-import 'package:food_grid_ui/ui/screens/auth/sign_in_screen.dart';
-import 'package:food_grid_ui/ui/screens/detail_product_screen.dart';
-import 'package:food_grid_ui/ui/screens/main_bottom_nav/main_bottom_nav.dart';
-import 'package:food_grid_ui/ui/screens/splash_screen.dart';
+import 'package:food_grid_ui/ui/screens/main_bottom_nav/popular_menu_screen.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:get/get.dart';
 
@@ -62,7 +59,9 @@ class FoodGrid extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const MainBottomNavScreen(),
+      home: const PopularMenuScreen(
+        title: "Popular",
+      ),
     );
   }
 }

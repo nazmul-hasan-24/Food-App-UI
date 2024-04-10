@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:food_grid_ui/ui/screens/auth/bio_screen.dart';
-import 'package:food_grid_ui/ui/screens/auth/sign_in_screen.dart';
 import 'package:food_grid_ui/ui/utils/assets_path/images_path.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:food_grid_ui/ui/utils/dimensions.dart';
 import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
-import 'package:food_grid_ui/ui/widgets/body_background.dart';
 import 'package:food_grid_ui/ui/widgets/elevated_button.dart';
 import 'package:food_grid_ui/ui/widgets/large_text.dart';
 import 'package:food_grid_ui/ui/widgets/small_text.dart';

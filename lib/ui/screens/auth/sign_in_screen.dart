@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:food_grid_ui/ui/screens/auth/sign_up_page.dart';
-import 'package:food_grid_ui/ui/screens/main_bottom_nav/main_bottom_nav.dart';
 import 'package:food_grid_ui/ui/utils/assets_path/images_path.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:food_grid_ui/ui/utils/dimensions.dart';

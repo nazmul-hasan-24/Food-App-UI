@@ -4,7 +4,6 @@ import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:food_grid_ui/ui/utils/dimensions.dart';
 import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
 import 'package:food_grid_ui/ui/widgets/body_background.dart';
-import 'package:food_grid_ui/ui/widgets/helper_text.dart';
 import 'package:food_grid_ui/ui/widgets/back_button_widget.dart';
 import 'package:food_grid_ui/ui/widgets/elevated_button.dart';
 import 'package:food_grid_ui/ui/widgets/large_text.dart';

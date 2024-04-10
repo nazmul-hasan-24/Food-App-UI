@@ -41,7 +41,7 @@ class NotificationScreen extends StatelessWidget {
                     itemCount: 10,
                     itemBuilder: (context, int index) {
                       return Container(
-                        margin: EdgeInsets.all(5)
+                        margin: const EdgeInsets.all(5)
                             .copyWith(bottom: Dimensions.height14),
                         constraints:
                             BoxConstraints.expand(height: Dimensions.height110),
@@ -70,7 +70,7 @@ class NotificationScreen extends StatelessWidget {
                                       largeText:
                                           "Your order has taken by driver"),
                                   verticalHeight(7),
-                                  SmallText(smallText: "Recently")
+                                  const SmallText(smallText: "Recently")
                                 ],
                               ),
                             )

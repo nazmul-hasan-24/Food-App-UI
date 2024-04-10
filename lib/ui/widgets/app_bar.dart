@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_grid_ui/ui/screens/explore_menu_with_filter.dart';
 import 'package:food_grid_ui/ui/screens/notification_screen.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:food_grid_ui/ui/utils/dimensions.dart';
@@ -12,7 +13,6 @@ class AppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
     return Column(
       children: [
         Row(
@@ -60,7 +60,9 @@ class AppBarWidget extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Get.to(() => const ExploreMenuWithFilter());
+              },
               child: Container(
                 height: Dimensions.height52,
                 width: Dimensions.width61,

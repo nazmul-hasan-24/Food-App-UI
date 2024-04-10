@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:food_grid_ui/ui/screens/main_bottom_nav/home_screen.dart';
 
-class Home2 extends StatefulWidget {
-  const Home2({super.key});
+class AllResListScreen extends StatefulWidget {
+  const AllResListScreen({super.key});
 
   @override
-  State<Home2> createState() => _Home2State();
+  State<AllResListScreen> createState() => _AllResListScreenState();
 }
 
-class _Home2State extends State<Home2> {
+class _AllResListScreenState extends State<AllResListScreen> {
   bool showNewWidget = false;
 
   void toggleNewWidget() {

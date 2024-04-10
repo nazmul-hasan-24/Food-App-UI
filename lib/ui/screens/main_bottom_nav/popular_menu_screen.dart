@@ -4,6 +4,7 @@ import 'package:food_grid_ui/ui/screens/main_bottom_nav/cart_screen.dart';
 import 'package:food_grid_ui/ui/screens/main_bottom_nav/message_screen.dart';
 import 'package:food_grid_ui/ui/screens/main_bottom_nav/profile_screen.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
+import 'package:food_grid_ui/ui/utils/dimensions.dart';
 import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
 import 'package:food_grid_ui/ui/widgets/app_bar.dart';
 import 'package:food_grid_ui/ui/widgets/body_background.dart';
@@ -126,42 +127,46 @@ class PopularMenuLists extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: BodyBackground(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const AppBarWidget(),
-            verticalHeight(10),
-            Text(
-              title!,
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            verticalHeight(10),
-            const SearchWidget(
-              text: ['Pizza x', 'Snadwich x'],
-            ),
-            verticalHeight(10),
-            Expanded(
-              child: ListView.separated(
-                itemCount: 20,
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                primary: false,
-                itemBuilder: (context, index) {
-                  return SizedBox(
-                    height: 150,
-                    width: width * 0.95,
-                    child: const PopularMenuCardWidget(),
-                  );
-                },
-                separatorBuilder: (_, __) {
-                  return verticalHeight(10);
-                },
+    return Scaffold(
+      backgroundColor: AppColor.backgroundColor0d0d,
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: Dimensions.width25)
+            .copyWith(top: Dimensions.height44),
+        child: BodyBackground(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const AppBarWidget(),
+              verticalHeight(10),
+              Text(
+                title!,
+                style: Theme.of(context).textTheme.titleMedium,
               ),
-            )
-          ],
+              verticalHeight(10),
+              const SearchWidget(
+                text: ['Pizza x', 'Snadwich x'],
+              ),
+              verticalHeight(10),
+              Expanded(
+                child: ListView.separated(
+                  itemCount: 20,
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  primary: false,
+                  itemBuilder: (context, index) {
+                    return SizedBox(
+                      height: 150,
+                      width: width * 0.95,
+                      child: const PopularMenuCardWidget(),
+                    );
+                  },
+                  separatorBuilder: (_, __) {
+                    return verticalHeight(10);
+                  },
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

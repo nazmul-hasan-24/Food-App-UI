@@ -10,14 +10,14 @@ import 'package:food_grid_ui/ui/widgets/large_text.dart';
 import 'package:food_grid_ui/ui/widgets/place_order_widget.dart';
 import 'package:get/get.dart';
 
-class CartScreen extends StatefulWidget {
-  const CartScreen({super.key});
+class ExploreMenuWithFilter extends StatefulWidget {
+  const ExploreMenuWithFilter({super.key});
 
   @override
-  State<CartScreen> createState() => _CartScreenState();
+  State<ExploreMenuWithFilter> createState() => _ExploreMenuWithFilterState();
 }
 
-class _CartScreenState extends State<CartScreen> {
+class _ExploreMenuWithFilterState extends State<ExploreMenuWithFilter> {
   List<FoodOrderCardWidget> orderList = List.generate(
       10,
       (index) =>
@@ -50,25 +50,7 @@ class _CartScreenState extends State<CartScreen> {
                   child: ListView.builder(
                     itemCount: orderList.length, // Use orderList.length
                     itemBuilder: (context, int index) {
-                      return Dismissible(
-                        key: ValueKey<FoodOrderCardWidget>(orderList[index]),
-                        background: Container(
-                          decoration: BoxDecoration(
-                            color: AppColor.primaryColor,
-                            borderRadius: BorderRadius.circular(18),
-                          ),
-                          child: const Icon(
-                            Icons.delete,
-                            color: AppColor.whiteColorFFF,
-                          ),
-                        ),
-                        onDismissed: (direction) {
-                          setState(() {
-                            orderList.removeAt(index); // Remove from orderList
-                          });
-                        },
-                        child: orderList[index],
-                      );
+                      return orderList[index];
                     },
                   ),
                 ),

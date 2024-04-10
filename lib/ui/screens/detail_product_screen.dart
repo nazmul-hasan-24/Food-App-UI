@@ -132,19 +132,19 @@ class DetailProductScreen extends StatelessWidget {
                                 SizedBox(
                                   height: height / 44.8,
                                   width: width / 25.875,
-                                  child: Icon(
+                                  child: const Icon(
                                     color: Color(0xFFFFA300),
                                     Icons.location_on,
                                   ),
                                 ),
-                                SmallText(
+                                const SmallText(
                                   smallText: "10 Km",
                                   letterSpacing: 0.5,
                                   textColor: Color(0xFF666666),
                                 ),
                               ],
                             ),
-                            Wrap(
+                            const Wrap(
                               spacing: 12,
                               children: [
                                 SizedBox(

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:food_grid_ui/ui/utils/assets_path/images_path.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
+import 'package:food_grid_ui/ui/utils/dimensions.dart';
 import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
 import 'package:food_grid_ui/ui/widgets/body_background.dart';
 import 'package:food_grid_ui/ui/widgets/back_button_widget.dart';
+import 'package:food_grid_ui/ui/widgets/elevated_button.dart';
 import 'package:food_grid_ui/ui/widgets/large_text.dart';
+import 'package:get/get.dart';
 
 class VoucherPromoScreen extends StatelessWidget {
   const VoucherPromoScreen({super.key});
@@ -14,7 +17,9 @@ class VoucherPromoScreen extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
     final double width = size.width;
     final double height = size.height;
+    int index = 0;
     return Scaffold(
+      backgroundColor: AppColor.backgroundColor0d0d,
       body: BodyBackground(
         child: Padding(
           padding: const EdgeInsets.all(25.0),
@@ -24,7 +29,9 @@ class VoucherPromoScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 BackButtonWidget(
-                  onTab: () {},
+                  onTab: () {
+                    Get.back();
+                  },
                 ),
                 verticalHeight(30),
                 const LargeText(
@@ -40,12 +47,19 @@ class VoucherPromoScreen extends StatelessWidget {
                         height: height / 4.5,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          gradient: LinearGradient(
-                            colors: [
-                              const Color(0xFF22EA8A),
-                              const Color(0xFF02AC5B).withOpacity(0.8),
-                            ],
-                          ),
+                          gradient: index.isEven
+                              ? LinearGradient(
+                                  colors: [
+                                    const Color(0xFF22EA8A),
+                                    const Color(0xFF02AC5B).withOpacity(0.8),
+                                  ],
+                                )
+                              : const LinearGradient(
+                                  colors: [
+                                    Color(0xFFE9F7BA),
+                                    Color(0xFFE9F7BA),
+                                  ],
+                                ),
                         ),
                         child: Row(
                           children: [
@@ -58,15 +72,20 @@ class VoucherPromoScreen extends StatelessWidget {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                                verticalHeight(Dimensions.height30),
                                 SizedBox(
-                                  height: 60,
-                                  width: 167,
+                                  height: Dimensions.height60,
+                                  width: Dimensions.width167,
                                   child: LargeText(
                                     fontSize: width / 19.2,
                                     fontWeight: FontWeight.w700,
                                     largeText: "Special Deal For Octorber",
+                                    color: index.isEven
+                                        ? AppColor.whiteColorFFF
+                                        : const Color(0xFF6B3A5B),
                                   ),
                                 ),
+                                verticalHeight(Dimensions.height13),
                                 Container(
                                   alignment: Alignment.center,
                                   width: width / 3.7,
@@ -84,11 +103,13 @@ class VoucherPromoScreen extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  child: const LargeText(
+                                  child: LargeText(
                                     largeText: "Buy now",
                                     fontSize: 15,
                                     fontWeight: FontWeight.w700,
-                                    color: Color(0xFf008344),
+                                    color: index.isEven
+                                        ? const Color(0xFf008344)
+                                        : const Color(0xFF6B3A5B),
                                   ),
                                 )
                               ],
@@ -101,6 +122,13 @@ class VoucherPromoScreen extends StatelessWidget {
                       return verticalHeight(10);
                     },
                   ),
+                ),
+                ElevatedButtonWidget(
+                  height: Dimensions.height60,
+                  text: ("Check Out"),
+                  textColour: AppColor.backgroundColor0d0d,
+                  onTab: () {},
+                  width: double.infinity,
                 )
               ],
             ),
