@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_grid_ui/ui/screens/eiit_payment_screen.dart';
-import 'package:food_grid_ui/ui/screens/location_screen.dart';
+import 'package:food_grid_ui/ui/screens/set_location_screen.dart';
+import 'package:food_grid_ui/ui/screens/main_bottom_nav/main_bottom_nav.dart';
 import 'package:food_grid_ui/ui/utils/assets_path/images_path.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:food_grid_ui/ui/utils/dimensions.dart';
@@ -31,12 +32,12 @@ class PaymentsScreen extends StatelessWidget {
                     Get.back();
                   },
                 ),
-                verticalHeight(20),
-                LargeText(
+                verticalSpace(20),
+                BigText(
                   largeText: "Confirm Order",
                   fontSize: Dimensions.height25,
                 ),
-                verticalHeight(14),
+                verticalSpace(14),
                 Container(
                   alignment: Alignment.center,
                   width: double.infinity,
@@ -55,7 +56,7 @@ class PaymentsScreen extends StatelessWidget {
                           const SmallText(smallText: "Deliver To"),
                           GestureDetector(
                             onTap: () => Get.to(
-                              () => const LocationScreen(),
+                              () => const SetLocationScreen(),
                             ),
                             child: const SmallText(
                               smallText: "Edit",
@@ -64,7 +65,7 @@ class PaymentsScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                      verticalHeight(5),
+                      verticalSpace(5),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,7 +96,7 @@ class PaymentsScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                verticalHeight(14),
+                verticalSpace(14),
                 Container(
                   alignment: Alignment.center,
                   width: double.infinity,
@@ -123,7 +124,7 @@ class PaymentsScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                      verticalHeight(12),
+                      verticalSpace(12),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -164,7 +165,9 @@ class PaymentsScreen extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                const PlaceOdredWidget()
+                PlaceOdredWidget(
+                  onTab: () => Get.to(() => const MainBottomNavScreen()),
+                )
               ],
             ),
           ),

@@ -9,8 +9,10 @@ import 'package:food_grid_ui/ui/widgets/text_form_field.dart';
 import 'package:get/get.dart';
 
 class AppBarWidget extends StatelessWidget {
-  const AppBarWidget({super.key});
-
+  const AppBarWidget(
+      {super.key, this.onTap, this.textInputType = TextInputType.none});
+  final VoidCallback? onTap;
+  final TextInputType textInputType;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,7 +20,7 @@ class AppBarWidget extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            LargeText(
+            BigText(
               largeText: 'Find your \nfavorite food',
               fontSize: Dimensions.height30,
             ),
@@ -45,26 +47,27 @@ class AppBarWidget extends StatelessWidget {
             )
           ],
         ),
-        verticalHeight(Dimensions.height25),
+        verticalSpace(Dimensions.height25),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
               width: Dimensions.width293,
-              height: 60,
-              child: const CustomTextFormField(
-                textInputType: TextInputType.none,
+              height: Dimensions.height60,
+              child: CustomTextFormField(
+                onTap: onTap,
+                textInputType: textInputType,
                 prefixIcon: Icons.search,
-                hintText: 'What do your want to order?',
+                hintText: 'What do your wanna order?',
               ),
             ),
             GestureDetector(
               onTap: () {
-                Get.to(() => const ExploreMenuWithFilter());
+                Get.to(() => const ExploreMenuWithFilterScreen());
               },
               child: Container(
-                height: Dimensions.height52,
+                height: Dimensions.height60,
                 width: Dimensions.width61,
                 padding: const EdgeInsets.all(5),
                 decoration: BoxDecoration(

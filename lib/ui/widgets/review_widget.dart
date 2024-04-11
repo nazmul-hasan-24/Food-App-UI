@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
+import 'package:food_grid_ui/ui/utils/dimensions.dart';
 import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
 import 'package:food_grid_ui/ui/widgets/body_background.dart';
 import 'package:food_grid_ui/ui/widgets/elevated_button.dart';
 import 'package:food_grid_ui/ui/widgets/large_text.dart';
 import 'package:food_grid_ui/ui/widgets/small_text.dart';
+import 'package:food_grid_ui/ui/widgets/text_form_field.dart';
 
 class ReviewWidget extends StatelessWidget {
   const ReviewWidget(
@@ -24,7 +26,8 @@ class ReviewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BodyBackground(
       child: Padding(
-        padding: const EdgeInsets.all(12.0).copyWith(top: 120, bottom: 70),
+        padding: EdgeInsets.symmetric(horizontal: Dimensions.width25)
+            .copyWith(top: Dimensions.height125, bottom: Dimensions.height40),
         child: Column(
           children: [
             Center(
@@ -52,15 +55,21 @@ class ReviewWidget extends StatelessWidget {
                 // ),
               ),
             ),
-            verticalHeight(20),
-            const LargeText(largeText: "Thank You!"),
-            verticalHeight(20),
-            LargeText(largeText: bigText!),
-            verticalHeight(20),
-            SmallText(smallText: smallText!),
-            verticalHeight(20),
+            verticalSpace(20),
+            BigText(
+              largeText: "Thank You!",
+              fontSize: Dimensions.height20,
+            ),
+            verticalSpace(Dimensions.height20),
+            BigText(largeText: bigText!),
+            verticalSpace(20),
+            SmallText(
+              smallText: smallText!,
+              fontSize: Dimensions.height20,
+            ),
+            verticalSpace(20),
             Wrap(
-              spacing: 15,
+              spacing: Dimensions.width12,
               children: List.generate(
                   5,
                   (index) => const Icon(
@@ -70,35 +79,33 @@ class ReviewWidget extends StatelessWidget {
                       )),
             ),
             const Spacer(),
-            TextFormField(
-              decoration: InputDecoration(
-                border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-                contentPadding: const EdgeInsets.all(18),
-                prefixIconColor: AppColor.primaryColor,
-                hintText: "Leave feedback",
-                fillColor: const Color.fromARGB(255, 37, 36, 36),
-                hintStyle: const TextStyle(color: Colors.white54),
-                filled: true,
-                prefixIcon: const Icon(Icons.note_alt_outlined),
-              ),
+            const CustomTextFormField(
+              hintText: "Leave feedback",
+              prefixIcon: Icons.rate_review_outlined,
+              prefixIconColor: AppColor.primaryColor,
             ),
-            verticalHeight(18),
+            verticalSpace(18),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ElevatedButtonWidget(
-                  text: "Submit",
-                  onTab: submitOnPressed,
-                  textColour: AppColor.blackColor2,
-                  width: 200,
+                Flexible(
+                  flex: 3,
+                  child: ElevatedButtonWidget(
+                    height: Dimensions.height70,
+                    text: "Submit",
+                    onTab: submitOnPressed,
+                    textColour: AppColor.textBlack000,
+                    width: Dimensions.screenHeight / 1.754,
+                  ),
                 ),
+                horizontal(Dimensions.width12),
                 ElevatedButtonWidget(
+                  height: Dimensions.height70,
                   buttonBackGrounColor: AppColor.lightBlack,
                   text: "Skip",
                   onTab: skipOnPressed,
-                  textColour: AppColor.primaryColor,
-                  width: 100,
+                  width: Dimensions.width112,
+                  textColour: const Color(0xFFFEAD1D),
                 ),
               ],
             )

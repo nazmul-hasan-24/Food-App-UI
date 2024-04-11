@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_grid_ui/ui/screens/location_screen.dart';
+import 'package:food_grid_ui/ui/screens/set_location_screen.dart';
 import 'package:food_grid_ui/ui/utils/assets_path/images_path.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:food_grid_ui/ui/utils/dimensions.dart';
@@ -31,12 +31,12 @@ class EditLocationScreen extends StatelessWidget {
                     Get.back();
                   },
                 ),
-                verticalHeight(20),
-                LargeText(
+                verticalSpace(20),
+                BigText(
                   largeText: "Shipping",
                   fontSize: Dimensions.height25,
                 ),
-                verticalHeight(14),
+                verticalSpace(14),
                 Container(
                   alignment: Alignment.center,
                   width: double.infinity,
@@ -55,7 +55,7 @@ class EditLocationScreen extends StatelessWidget {
                             smallText: 'Order Location',
                             fontSize: Dimensions.height14,
                           ),
-                          verticalHeight(Dimensions.height8),
+                          verticalSpace(Dimensions.height8),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,7 +89,7 @@ class EditLocationScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                verticalHeight(Dimensions.height14),
+                verticalSpace(Dimensions.height14),
                 Container(
                   alignment: Alignment.centerLeft,
                   width: double.infinity,
@@ -109,7 +109,7 @@ class EditLocationScreen extends StatelessWidget {
                             smallText: 'Deliver To',
                             fontSize: Dimensions.height14,
                           ),
-                          verticalHeight(Dimensions.height8),
+                          verticalSpace(Dimensions.height8),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -138,9 +138,10 @@ class EditLocationScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          verticalHeight(Dimensions.height8),
+                          verticalSpace(Dimensions.height8),
                           GestureDetector(
-                            onTap: () => Get.to(() => const LocationScreen()),
+                            onTap: () =>
+                                Get.to(() => const SetLocationScreen()),
                             child: const SmallText(smallText: "Set Location"),
                           )
                         ],

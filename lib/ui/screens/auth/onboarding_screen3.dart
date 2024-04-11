@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_grid_ui/ui/screens/auth/sign_in_screen.dart';
+import 'package:food_grid_ui/ui/screens/auth/sign_up_page.dart';
 import 'package:food_grid_ui/ui/utils/assets_path/images_path.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:food_grid_ui/ui/utils/dimensions.dart';
@@ -19,24 +19,25 @@ class OnBoadingScreen3 extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          verticalHeight(Dimensions.screenHeight / 8.96),
-          Center(
+          verticalSpace(Dimensions.screenHeight / 8.96),
+          Container(
+            alignment: Alignment.center,
             child: Image.asset(
               ImagePath.onFood1,
               width: Dimensions.screenWidth / 1.14,
               height: Dimensions.screenHeight / 2.54,
             ),
           ),
-          verticalHeight(Dimensions.screenHeight / 11.72),
-          LargeText(
+          verticalSpace(Dimensions.screenHeight / 18.72),
+          BigText(
             largeText: 'Find FoodGrid is Where Your ',
             fontSize: Dimensions.height22,
           ),
-          LargeText(
+          BigText(
             largeText: 'Comfor Food Lives',
             fontSize: Dimensions.height22,
           ),
-          verticalHeight(Dimensions.height40),
+          verticalSpace(Dimensions.height40),
           SmallText(
             smallText: "Enjoy a fast and smoth food delivery at",
             fontSize: Dimensions.font12,
@@ -47,12 +48,14 @@ class OnBoadingScreen3 extends StatelessWidget {
             fontSize: Dimensions.font12,
             textColor: AppColor.whiteColorFFF,
           ),
-          verticalHeight(Dimensions.height33),
+          verticalSpace(Dimensions.height33),
           ElevatedButtonWidget(
             text: "Next",
             textColour: AppColor.textBlack000,
             onTab: () {
-              Get.to(() => const SignInScreen());
+              Get.to(
+                () => const SignUpScreen(),
+              );
             },
           ),
         ],

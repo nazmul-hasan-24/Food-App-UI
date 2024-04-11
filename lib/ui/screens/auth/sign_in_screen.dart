@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_grid_ui/ui/screens/auth/sign_up_page.dart';
+import 'package:food_grid_ui/ui/screens/auth/reset_passord/reset_password_by_method.dart';
+import 'package:food_grid_ui/ui/screens/main_bottom_nav/main_bottom_nav.dart';
 import 'package:food_grid_ui/ui/utils/assets_path/images_path.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:food_grid_ui/ui/utils/dimensions.dart';
@@ -18,17 +19,22 @@ class SignInScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColor.backgroundColor0d0d,
-        body: Stack(
-          children: [
-            Image.asset(ImagePath.recBack),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: Dimensions.width25),
-              child: SingleChildScrollView(
+        body: Container(
+          padding: EdgeInsets.symmetric(horizontal: Dimensions.width25),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(
+              Dimensions.height20,
+            ),
+          ),
+          child: Stack(
+            children: [
+              Image.asset(ImagePath.recBack),
+              SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    verticalHeight(Dimensions.height80),
+                    verticalSpace(Dimensions.height80),
                     Container(
                       height: size.height * 0.12,
                       width: size.width * 0.3,
@@ -36,18 +42,13 @@ class SignInScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8.0),
                         color: AppColor.primaryColor,
                       ),
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          Image.asset(
-                            ImagePath.cup,
-                            height: 60,
-                            width: 60,
-                          )
-                        ],
+                      child: Image.asset(
+                        ImagePath.cup,
+                        height: Dimensions.height60,
+                        width: Dimensions.width61,
                       ),
                     ),
-                    verticalHeight(Dimensions.height10),
+                    verticalSpace(Dimensions.height10),
                     Text(
                       "FoodGrid",
                       style: TextStyle(
@@ -56,56 +57,53 @@ class SignInScreen extends StatelessWidget {
                         fontFamily: 'IBM Plex Mono',
                       ),
                     ),
-                    verticalHeight(Dimensions.height10),
+                    verticalSpace(Dimensions.height10),
                     SmallText(
                       smallText: "Deliver favorite food",
                       fontSize: Dimensions.height13,
                       fontWeight: FontWeight.w500,
                       textColor: AppColor.whiteColorFFF,
                     ),
-                    verticalHeight(Dimensions.height25),
-                    LargeText(
+                    verticalSpace(Dimensions.height25),
+                    BigText(
                       largeText: "Login to your account",
                       fontSize: Dimensions.height22,
                     ),
-                    verticalHeight(Dimensions.height25),
+                    verticalSpace(Dimensions.height25),
                     Form(
                       child: Column(
                         children: [
-                          SizedBox(
-                            height: 60,
-                            child: TextFormField(
-                              decoration: InputDecoration(
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius:
-                                      BorderRadius.circular(Dimensions.height8),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius:
-                                      BorderRadius.circular(Dimensions.height8),
-                                ),
-                                border: OutlineInputBorder(
-                                  borderSide: BorderSide.none,
-                                  borderRadius:
-                                      BorderRadius.circular(Dimensions.height8),
-                                ),
-                                hintText: "Email",
-                                contentPadding: EdgeInsets.symmetric(
-                                  horizontal: Dimensions.width25,
-                                  vertical: Dimensions.height18,
-                                ),
-                                fillColor: AppColor.backgroundColor2525,
-                                filled: true,
-                                hintStyle: TextStyle(
-                                  color: AppColor.philippineGrayC4C4,
-                                  fontSize: Dimensions.height14,
-                                ),
+                          TextFormField(
+                            decoration: InputDecoration(
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius:
+                                    BorderRadius.circular(Dimensions.height8),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius:
+                                    BorderRadius.circular(Dimensions.height8),
+                              ),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius:
+                                    BorderRadius.circular(Dimensions.height8),
+                              ),
+                              hintText: "Email",
+                              contentPadding: EdgeInsets.symmetric(
+                                horizontal: Dimensions.width25,
+                                vertical: Dimensions.height18,
+                              ),
+                              fillColor: AppColor.backgroundColor2525,
+                              filled: true,
+                              hintStyle: TextStyle(
+                                color: AppColor.philippineGrayC4C4,
+                                fontSize: Dimensions.height14,
                               ),
                             ),
                           ),
-                          verticalHeight(Dimensions.font12),
+                          verticalSpace(Dimensions.font12),
                           TextFormField(
                             decoration: InputDecoration(
                               contentPadding: EdgeInsets.symmetric(
@@ -136,12 +134,12 @@ class SignInScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          verticalHeight(Dimensions.height18),
-                          LargeText(
+                          verticalSpace(Dimensions.height18),
+                          BigText(
                             largeText: "Or Continue With",
                             fontSize: Dimensions.font12,
                           ),
-                          verticalHeight(Dimensions.height18),
+                          verticalSpace(Dimensions.height18),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -152,8 +150,10 @@ class SignInScreen extends StatelessWidget {
                                 height: Dimensions.buttonHeight60,
                                 width: Dimensions.butonWidth171,
                                 decoration: BoxDecoration(
-                                    color: AppColor.backgroundColor2525,
-                                    borderRadius: BorderRadius.circular(8.0)),
+                                  color: AppColor.backgroundColor2525,
+                                  borderRadius:
+                                      BorderRadius.circular(Dimensions.height8),
+                                ),
                                 child: Wrap(
                                   spacing: Dimensions.width12,
                                   alignment: WrapAlignment.center,
@@ -164,7 +164,7 @@ class SignInScreen extends StatelessWidget {
                                       height: Dimensions.height30,
                                       width: Dimensions.iconWidth30,
                                     ),
-                                    LargeText(
+                                    BigText(
                                       largeText: "Facebook",
                                       fontWeight: FontWeight.w500,
                                       fontSize: Dimensions.height14,
@@ -174,13 +174,15 @@ class SignInScreen extends StatelessWidget {
                               ),
                               Container(
                                 alignment: Alignment.center,
-                                padding: const EdgeInsets.only(left: 15),
+                                padding:
+                                    EdgeInsets.only(left: Dimensions.width15),
                                 margin: EdgeInsets.zero,
                                 height: Dimensions.buttonHeight60,
                                 width: Dimensions.butonWidth171,
                                 decoration: BoxDecoration(
                                     color: AppColor.backgroundColor2525,
-                                    borderRadius: BorderRadius.circular(8.0)),
+                                    borderRadius: BorderRadius.circular(
+                                        Dimensions.height8)),
                                 child: Wrap(
                                   spacing: Dimensions.width12,
                                   alignment: WrapAlignment.center,
@@ -191,7 +193,7 @@ class SignInScreen extends StatelessWidget {
                                       height: Dimensions.height30,
                                       width: Dimensions.iconWidth30,
                                     ),
-                                    LargeText(
+                                    BigText(
                                       largeText: "Google",
                                       fontWeight: FontWeight.w500,
                                       fontSize: Dimensions.height14,
@@ -201,11 +203,16 @@ class SignInScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(
-                            height: 18.0,
-                          ),
+                          verticalSpace(Dimensions.height18),
                           InkWell(
-                            onTap: () {},
+                            borderRadius:
+                                BorderRadius.circular(Dimensions.width10),
+                            radius: Dimensions.height15,
+                            onTap: () {
+                              Get.to(
+                                () => const ResetPasswordByMethodScreen(),
+                              );
+                            },
                             child: Text(
                               "Forgot your password?",
                               style: TextStyle(
@@ -219,16 +226,16 @@ class SignInScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 20,
+                          verticalSpace(
+                            Dimensions.height25,
                           ),
                           ElevatedButtonWidget(
-                            text: "Next",
+                            text: "Login",
                             textColour: AppColor.backgroundColor0d0d,
                             buttonBackGrounColor: AppColor.primaryColor,
                             onTab: () {
                               Get.offAll(
-                                () => const SignUpScreen(),
+                                () => const MainBottomNavScreen(),
                               );
                             },
                           ),
@@ -238,8 +245,8 @@ class SignInScreen extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

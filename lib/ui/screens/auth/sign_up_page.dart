@@ -27,23 +27,31 @@ class _SignUpScreenState extends State<SignUpScreen> {
         backgroundColor: AppColor.backgroundColor0d0d,
         body: Stack(
           children: [
-            Image.asset(ImagePath.recBack),
-            Padding(
+            Image.asset(
+              ImagePath.recBack,
+              fit: BoxFit.cover,
+            ),
+            Container(
               padding: EdgeInsets.symmetric(
                 horizontal: Dimensions.width25,
-                vertical: Dimensions.height18,
+                vertical: Dimensions.height60,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(
+                  Dimensions.height20,
+                ),
               ),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    verticalHeight(Dimensions.height80),
+                    // verticalSpace(Dimensions.height80),
                     Container(
                       height: size.height * 0.12,
                       width: size.width * 0.3,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.0),
+                        borderRadius: BorderRadius.circular(Dimensions.height8),
                         color: AppColor.primaryColor,
                       ),
                       child: Stack(
@@ -51,13 +59,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         children: [
                           Image.asset(
                             ImagePath.cup,
-                            height: 60,
-                            width: 60,
+                            height: Dimensions.height60,
+                            width: Dimensions.width61,
                           )
                         ],
                       ),
                     ),
-                    verticalHeight(Dimensions.height10),
+                    verticalSpace(Dimensions.height10),
                     Text(
                       "FoodGrid",
                       style: TextStyle(
@@ -66,19 +74,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         fontFamily: 'IBM Plex Mono',
                       ),
                     ),
-                    verticalHeight(Dimensions.height10),
+                    verticalSpace(Dimensions.height10),
                     SmallText(
                       smallText: "Deliver favorite food",
                       fontSize: Dimensions.height13,
                       fontWeight: FontWeight.w500,
                       textColor: AppColor.whiteColorFFF,
                     ),
-                    verticalHeight(Dimensions.height25),
-                    LargeText(
+                    verticalSpace(Dimensions.height25),
+                    BigText(
                       largeText: "Sign Up For Free",
                       fontSize: Dimensions.height22,
                     ),
-                    verticalHeight(Dimensions.height25),
+                    verticalSpace(Dimensions.height25),
                     Form(
                       child: Column(
                         children: [
@@ -87,24 +95,27 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             hintText: "User name",
                             prefixIcon: Icons.person,
                           ),
-                          verticalHeight(Dimensions.font12),
+                          verticalSpace(Dimensions.font12),
                           const CustomTextFormField(
                             textInputType: TextInputType.emailAddress,
                             hintText: "Email",
                             prefixIcon: Icons.email,
                           ),
-                          verticalHeight(Dimensions.font12),
+                          verticalSpace(Dimensions.font12),
                           const CustomTextFormField(
                             textInputType: TextInputType.text,
                             hintText: "Password",
                             prefixIcon: Icons.lock,
                             suffixIcon: Icons.remove_red_eye_rounded,
                           ),
-                          verticalHeight(Dimensions.height18),
+                          verticalSpace(
+                            Dimensions.height8,
+                          ),
                           SizedBox(
-                            height: 26,
-                            width: double.infinity,
+                            height: Dimensions.height22,
+                            // width: double.infinity,
                             child: ListTile(
+                              horizontalTitleGap: 0,
                               contentPadding: EdgeInsets.zero,
                               // minVerticalPadding: 0.2,
                               minLeadingWidth: Dimensions.iconWidth20,
@@ -129,12 +140,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               ),
                             ),
                           ),
-                          verticalHeight(15),
+                          verticalSpace(Dimensions.font12),
                           SizedBox(
-                            height: 26,
+                            height: Dimensions.height22,
                             width: double.infinity,
                             child: ListTile(
-                              horizontalTitleGap: Dimensions.width12,
+                              horizontalTitleGap: 0,
                               // minVerticalPadding: 0.2,
                               contentPadding: EdgeInsets.zero,
                               leading: Checkbox(
@@ -156,7 +167,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               ),
                             ),
                           ),
-                          verticalHeight(Dimensions.height40),
+                          verticalSpace(Dimensions.height40),
                           ElevatedButtonWidget(
                             text: "Create Account",
                             width: Dimensions.butonWidth171,
@@ -164,15 +175,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             buttonBackGrounColor: AppColor.primaryColor,
                             onTab: () {
                               Get.to(
-                                () => const BioPage(),
+                                () => const BioScreen(),
                               );
                             },
                           ),
-                          verticalHeight(Dimensions.height16),
+                          verticalSpace(
+                            Dimensions.height16,
+                          ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () => Get.to(
+                              () => const BioScreen(),
+                            ),
                             child: Text(
-                              "Forgot your password?",
+                              "already have an account?",
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 decorationThickness: 2,

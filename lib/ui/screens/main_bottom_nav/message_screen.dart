@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:food_grid_ui/presentation/controllers/main_nav_controller.dart';
-import 'package:food_grid_ui/ui/screens/chat_screen.dart';
+import 'package:food_grid_ui/ui/screens/chat_details_screen.dart';
 import 'package:food_grid_ui/ui/utils/assets_path/images_path.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
+import 'package:food_grid_ui/ui/utils/dimensions.dart';
 import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
 import 'package:food_grid_ui/ui/widgets/body_background.dart';
 import 'package:food_grid_ui/ui/widgets/back_button_widget.dart';
@@ -15,8 +16,6 @@ class MessingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: PopScope(
         canPop: false,
@@ -24,21 +23,27 @@ class MessingScreen extends StatelessWidget {
           Get.find<MainBottomNavController>().backToHome();
         },
         child: Scaffold(
+          backgroundColor: AppColor.backgroundColor0d0d,
           body: BodyBackground(
-            child: Padding(
-              padding: const EdgeInsets.all(18.0),
+            child: Container(
+              padding:
+                  EdgeInsets.symmetric(horizontal: Dimensions.width25).copyWith(
+                top: Dimensions.height44,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   BackButtonWidget(
-                    onTab: () {},
+                    onTab: () {
+                      Get.back();
+                    },
                   ),
-                  verticalHeight(18),
+                  verticalSpace(Dimensions.height18),
                   Text(
                     "Chat",
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
-                  verticalHeight(13),
+                  verticalSpace(13),
                   Expanded(
                     child: ListView.separated(
                       itemCount: 15,
@@ -50,28 +55,38 @@ class MessingScreen extends StatelessWidget {
                             ),
                           ),
                           child: Container(
-                            alignment: Alignment.center,
-                            padding: const EdgeInsets.all(12),
+                            // alignment: Alignment.center,
+                            padding: EdgeInsets.all(
+                              Dimensions.font12,
+                            ),
                             constraints: BoxConstraints.tight(
-                              Size.fromHeight(height * 0.14),
+                              Size.fromHeight(
+                                Dimensions.height100,
+                              ),
                             ),
                             decoration: BoxDecoration(
                               border: Border.all(
-                                  width: 0, color: Colors.transparent),
-                              borderRadius: BorderRadius.circular(12),
+                                width: 0,
+                                color: AppColor.backgroundColor2525,
+                              ),
+                              borderRadius: BorderRadius.circular(
+                                Dimensions.font12,
+                              ),
                               color: AppColor.lightBlack,
                             ),
                             child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 ClipRRect(
-                                  borderRadius: BorderRadius.circular(20.0),
+                                  borderRadius: BorderRadius.circular(
+                                      Dimensions.height18),
                                   child: Image.asset(
+                                    fit: BoxFit.cover,
                                     ImagePath.myPhoto,
+                                    width: Dimensions.screenWidth / 5.447,
+                                    height: Dimensions.screenHeight / 11.636,
                                   ),
                                 ),
-                                horizontal(width * 0.04),
+                                horizontal(Dimensions.width10),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -79,17 +94,26 @@ class MessingScreen extends StatelessWidget {
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
                                       children: [
-                                        const LargeText(
+                                        BigText(
                                           largeText: "Nazmul Hasan",
+                                          fontSize: Dimensions.height18,
                                         ),
-                                        horizontal(width * 0.06),
-                                        const SmallText(smallText: '14:33')
+                                        horizontal(
+                                            Dimensions.screenWidth / 6.8),
+                                        SmallText(
+                                          smallText: '14:33',
+                                          fontSize: Dimensions.height14,
+                                        )
                                       ],
                                     ),
-                                    verticalHeight(13),
-                                    const SmallText(
-                                        smallText: "Your order just arrived")
+                                    verticalSpace(Dimensions.height10),
+                                    SmallText(
+                                      fontSize: Dimensions.height14,
+                                      smallText: "Your order just arrived",
+                                    )
                                   ],
                                 ),
                               ],
@@ -98,7 +122,7 @@ class MessingScreen extends StatelessWidget {
                         );
                       },
                       separatorBuilder: (_, __) {
-                        return verticalHeight(14);
+                        return verticalSpace(14);
                       },
                     ),
                   )

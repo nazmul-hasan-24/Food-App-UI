@@ -4,14 +4,15 @@ import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
 import 'package:food_grid_ui/ui/widgets/small_text.dart';
 
-class FoodOrderCardWidget extends StatefulWidget {
-  const FoodOrderCardWidget({super.key});
+class IncrementDecrementWidget extends StatefulWidget {
+  const IncrementDecrementWidget({super.key});
 
   @override
-  State<FoodOrderCardWidget> createState() => _FoodOrderCardWidgetState();
+  State<IncrementDecrementWidget> createState() =>
+      _IncrementDecrementWidgetState();
 }
 
-class _FoodOrderCardWidgetState extends State<FoodOrderCardWidget> {
+class _IncrementDecrementWidgetState extends State<IncrementDecrementWidget> {
   int item = 1;
   @override
   Widget build(BuildContext context) {
@@ -51,9 +52,9 @@ class _FoodOrderCardWidgetState extends State<FoodOrderCardWidget> {
                   "Spicy fresh crab",
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
-                verticalHeight(2),
+                verticalSpace(2),
                 const SmallText(smallText: "Hollywood Dine"),
-                verticalHeight(2),
+                verticalSpace(2),
                 const Text(
                   "\$50",
                   style: TextStyle(

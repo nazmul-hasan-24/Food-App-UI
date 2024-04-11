@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:food_grid_ui/ui/screens/main_bottom_nav/main_bottom_nav.dart';
+import 'package:food_grid_ui/ui/screens/payment_screen.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:food_grid_ui/ui/utils/dimensions.dart';
 import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
 import 'package:food_grid_ui/ui/widgets/body_background.dart';
 import 'package:food_grid_ui/ui/widgets/back_button_widget.dart';
-import 'package:food_grid_ui/ui/widgets/food_order_card_widget.dart';
+import 'package:food_grid_ui/ui/widgets/increment_decrement_widget.dart';
 import 'package:food_grid_ui/ui/widgets/large_text.dart';
 import 'package:food_grid_ui/ui/widgets/place_order_widget.dart';
 import 'package:get/get.dart';
@@ -18,10 +19,10 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
-  List<FoodOrderCardWidget> orderList = List.generate(
+  List<IncrementDecrementWidget> orderList = List.generate(
       10,
       (index) =>
-          FoodOrderCardWidget()); // Assuming FoodOrderCardWidget has a constructor
+          IncrementDecrementWidget()); // Assuming FoodOrderCardWidget has a constructor
   //NOTE don't put const here
 
   @override
@@ -40,18 +41,19 @@ class _CartScreenState extends State<CartScreen> {
                     Get.to(() => const MainBottomNavScreen());
                   },
                 ),
-                verticalHeight(Dimensions.height20),
-                LargeText(
+                verticalSpace(Dimensions.height20),
+                BigText(
                   largeText: "Order Details",
                   fontSize: Dimensions.height25,
                 ),
-                verticalHeight(17),
+                verticalSpace(17),
                 Expanded(
                   child: ListView.builder(
                     itemCount: orderList.length, // Use orderList.length
                     itemBuilder: (context, int index) {
                       return Dismissible(
-                        key: ValueKey<FoodOrderCardWidget>(orderList[index]),
+                        key: ValueKey<IncrementDecrementWidget>(
+                            orderList[index]),
                         background: Container(
                           decoration: BoxDecoration(
                             color: AppColor.primaryColor,
@@ -72,7 +74,9 @@ class _CartScreenState extends State<CartScreen> {
                     },
                   ),
                 ),
-                const PlaceOdredWidget()
+                PlaceOdredWidget(
+                  onTab: () => Get.to(() => const PaymentsScreen()),
+                )
               ],
             ),
           ),

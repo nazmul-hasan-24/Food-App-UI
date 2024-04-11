@@ -6,24 +6,28 @@ class CustomTextFormField extends StatelessWidget {
   final String hintText;
   final IconData? prefixIcon;
   final IconData? suffixIcon;
-  final TextInputType textInputType;
+  final TextInputType? textInputType;
+  final Color suffixIconColor;
+  final VoidCallback? onTap;
+  final Color prefixIconColor;
+  // final TextInputType textInputType;
   const CustomTextFormField({
     super.key,
     required this.hintText,
     this.prefixIcon,
     this.suffixIcon,
-    required this.textInputType,
+    this.prefixIconColor = AppColor.a1a1IconColor,
+    this.textInputType = TextInputType.text,
+    this.onTap,
+    this.suffixIconColor = AppColor.a1a1IconColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      // expands: true,
-      // maxLines: 5,
-      keyboardType: TextInputType.text,
-      // onTap: () => Get.to(() => const SearchScreen(
-      //       textInputType: TextInputType.text,
-      //     )),
+      // keyboardAppearance: ,
+      onTap: onTap,
+      keyboardType: textInputType,
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
         // alignLabelWithHint: true,
@@ -38,8 +42,9 @@ class CustomTextFormField extends StatelessWidget {
         ),
         suffixIcon: Icon(suffixIcon),
         // prefixIconConstraints: BoxConstraints(minHeight: 15, minWidth: 15),
-        suffixIconColor: AppColor.a1a1IconColor,
-        prefixIconColor: AppColor.a1a1IconColor,
+
+        suffixIconColor: suffixIconColor,
+        prefixIconColor: prefixIconColor,
 
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide.none,

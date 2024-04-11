@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
 
-class LargeText extends StatelessWidget {
+class BigText extends StatelessWidget {
   final String largeText;
   final double fontSize;
   final Color color;
   final FontWeight fontWeight;
-  const LargeText({
+  const BigText({
     super.key,
     required this.largeText,
     this.fontSize = 18,

@@ -9,14 +9,6 @@ class AllResListScreen extends StatefulWidget {
 }
 
 class _AllResListScreenState extends State<AllResListScreen> {
-  bool showNewWidget = false;
-
-  void toggleNewWidget() {
-    setState(() {
-      showNewWidget = !showNewWidget;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return const SafeArea(
@@ -26,3 +18,4 @@ class _AllResListScreenState extends State<AllResListScreen> {
     );
   }
 }
+// 

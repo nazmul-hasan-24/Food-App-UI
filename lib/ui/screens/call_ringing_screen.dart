@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_grid_ui/ui/screens/talking_screen%20.dart';
+import 'package:food_grid_ui/ui/screens/call_screen%20.dart';
 import 'package:food_grid_ui/ui/utils/assets_path/images_path.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
@@ -9,8 +9,8 @@ import 'package:food_grid_ui/ui/widgets/large_text.dart';
 import 'package:food_grid_ui/ui/widgets/small_text.dart';
 import 'package:get/get.dart';
 
-class RingingScreen extends StatelessWidget {
-  const RingingScreen({super.key, required this.name});
+class CallRingingScreen extends StatelessWidget {
+  const CallRingingScreen({super.key, required this.name});
   final String name;
 
   @override
@@ -19,6 +19,7 @@ class RingingScreen extends StatelessWidget {
     // final width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
+        backgroundColor: AppColor.backgroundColor0d0d,
         body: BodyBackground(
           child: Padding(
             padding: const EdgeInsets.all(12.0).copyWith(top: 120, bottom: 70),
@@ -51,30 +52,33 @@ class RingingScreen extends StatelessWidget {
                     // ),
                   ),
                 ),
-                verticalHeight(height * 0.025),
-                LargeText(largeText: name),
-                verticalHeight(height * 0.025),
+                verticalSpace(height * 0.025),
+                BigText(largeText: name),
+                verticalSpace(height * 0.025),
                 const SmallText(smallText: "Ringing..."),
-                verticalHeight(height * 0.2),
+                verticalSpace(height * 0.2),
                 Wrap(
                   spacing: 15,
                   children: [
-                    filledButtonWidget(
-                        onPress: () {
-                          Get.to(
-                            () => const TalkingScreen(
-                              name: "Nazmul",
-                            ),
-                          );
-                        },
-                        widget: const Icon(
-                          Icons.volume_up_sharp,
-                        ),
-                        color: AppColor.primaryColor),
-                    filledButtonWidget(
-                        onPress: () {},
-                        widget: const Text('X'),
-                        color: Colors.red)
+                    iconButtonWidget(
+                      onPress: () {},
+                      widget: const Icon(
+                        Icons.volume_up_sharp,
+                        color: Color(0xFFFFCC00),
+                      ),
+                      color: const Color(0xFF261F00),
+                    ),
+                    iconButtonWidget(
+                      onPress: () {
+                        Get.to(
+                          () => const CallScreen(
+                            name: "Nazmul",
+                          ),
+                        );
+                      },
+                      widget: const Text('X'),
+                      color: const Color(0xFFFF4B4B),
+                    )
                   ],
                 )
               ],

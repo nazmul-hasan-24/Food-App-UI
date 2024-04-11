@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_grid_ui/ui/screens/main_bottom_nav/popular_menu_screen.dart';
-import 'package:food_grid_ui/ui/screens/main_bottom_nav/res_list_screen.dart';
+import 'package:food_grid_ui/ui/screens/main_bottom_nav/home_restaurant_list_screen.dart';
+import 'package:food_grid_ui/ui/screens/main_bottom_nav/popular_manu.dart';
+import 'package:food_grid_ui/ui/screens/search_screen.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:food_grid_ui/ui/utils/dimensions.dart';
 import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
@@ -36,28 +37,28 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const AppBarWidget(),
-                  verticalHeight(10),
+                  AppBarWidget(
+                    onTap: () => Get.to(
+                      () => const SearchScreen(),
+                    ),
+                  ),
+                  verticalSpace(10),
                   const CarouseSliderWidget(),
-                  verticalHeight(12),
+                  verticalSpace(12),
                   SectionTitle(
-                    title: "Newest",
+                    title: "Newest Restaurant",
                     onTap: () {
                       Get.to(
-                        () => const RestaurantListScreen(
-                          title: 'Popular Restaurant',
-                        ),
+                        () => const RestaurantListScreen(),
                       );
                     },
                   ),
                   const NewRestaurantList(),
                   SectionTitle(
-                    title: "Newest",
+                    title: "Popular Restaurant",
                     onTap: () {
                       Get.to(
-                        () => const RestaurantListScreen(
-                          title: "Popular Restaurant",
-                        ),
+                        () => const RestaurantListScreen(),
                       );
                     },
                   ),
@@ -66,11 +67,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: "Popular",
                     onTap: () {
                       Get.to(
-                        () => const PopularMenuScreen(title: "Popular Menu"),
+                        () => const PopularManuListScreenH(),
                       );
                     },
                   ),
-                  const PopularRestaurantList(),
+                  const MenuList(),
                 ],
               ),
             ),

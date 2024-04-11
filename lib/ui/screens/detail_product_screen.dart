@@ -15,6 +15,7 @@ class DetailProductScreen extends StatelessWidget {
     final double width = size.width;
     final double height = size.height;
     return Scaffold(
+      backgroundColor: AppColor.backgroundColor0d0d,
       body: Stack(
         children: [
           Image.asset(
@@ -56,7 +57,7 @@ class DetailProductScreen extends StatelessWidget {
                             color: AppColor.backgroundColor2525,
                           ),
                         ),
-                        verticalHeight(height / 40.727),
+                        verticalSpace(height / 40.727),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -116,13 +117,13 @@ class DetailProductScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        verticalHeight(15),
-                        LargeText(
+                        verticalSpace(15),
+                        BigText(
                           largeText: "The Hungry Wolf",
                           fontSize: height / 29.8666,
                           fontWeight: FontWeight.w600,
                         ),
-                        verticalHeight(20),
+                        verticalSpace(20),
                         Wrap(
                           spacing: height / 49.777,
                           children: [
@@ -164,18 +165,18 @@ class DetailProductScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        verticalHeight(44.8),
+                        verticalSpace(44.8),
                         SmallText(
                           fontSize: height / 74.666,
                           smallText:
                               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis rutrum imperdiet turpis aenean viverra. Ornare vel risus, tincidunt tortor quis in elementum. Pulvinar pharetra dignissim sit posuere nulla lacus ',
                         ),
-                        verticalHeight(height / 44.8),
+                        verticalSpace(height / 44.8),
                         SectionTitle(
                           title: "Popular Menu",
                           onTap: () {},
                         ),
-                        verticalHeight(20),
+                        verticalSpace(20),
                         SizedBox(
                           height: height / 5.635,
                           child: ListView.builder(
@@ -193,20 +194,20 @@ class DetailProductScreen extends StatelessWidget {
                                   ),
                                   child: Column(
                                     children: [
-                                      verticalHeight(height / 44.8),
+                                      verticalSpace(height / 44.8),
                                       Image.asset(
                                         ImagePath.burger,
                                         height: height / 15.72,
                                         width: width / 5.52,
                                       ),
-                                      verticalHeight(13),
+                                      verticalSpace(13),
                                       SmallText(
                                         smallText: "Spacy fresh crab",
                                         fontSize: height / 68.923,
                                         textColor: AppColor.whiteColorFFF,
                                         fontWeight: FontWeight.w500,
                                       ),
-                                      verticalHeight(10),
+                                      verticalSpace(10),
                                       SmallText(
                                         smallText: "12\$",
                                         fontSize: height / 74.666,
@@ -219,12 +220,12 @@ class DetailProductScreen extends StatelessWidget {
                               },
                               itemCount: 15),
                         ),
-                        verticalHeight(20),
-                        const LargeText(
+                        verticalSpace(20),
+                        const BigText(
                           largeText: "Testimonials",
                           fontSize: 15,
                         ),
-                        verticalHeight(height / 44.8),
+                        verticalSpace(height / 44.8),
                         ListView.separated(
                           padding: EdgeInsets.zero,
                           shrinkWrap: true,
@@ -257,37 +258,34 @@ class DetailProductScreen extends StatelessWidget {
                                     ),
                                   ),
                                   horizontal(width / 20.71),
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        LargeText(
-                                          largeText: "William Noah",
-                                          fontSize: height / 59.7333,
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      BigText(
+                                        largeText: "William Noah",
+                                        fontSize: height / 59.7333,
+                                      ),
+                                      verticalSpace(height / 298.666),
+                                      SmallText(
+                                        smallText: "10 April 2022",
+                                        fontSize: height / 74.77,
+                                        textColor: const Color(0xFFA1A1A1),
+                                      ),
+                                      verticalSpace(height / 52.71),
+                                      Text(
+                                        "This is great, so delicious! you must here, with your family",
+                                        maxLines: 2,
+                                        style: TextStyle(
+                                          inherit: false,
+                                          fontSize: height / 74.666,
+                                          fontWeight: FontWeight.w400,
+                                          overflow: TextOverflow.ellipsis,
+                                          color: const Color(0xFFDFDFDF),
                                         ),
-                                        verticalHeight(height / 298.666),
-                                        SmallText(
-                                          smallText: "10 April 2022",
-                                          fontSize: height / 74.77,
-                                          textColor: const Color(0xFFA1A1A1),
-                                        ),
-                                        verticalHeight(height / 52.71),
-                                        Text(
-                                          "This is great, so delicious! you must here, with your family",
-                                          maxLines: 2,
-                                          style: TextStyle(
-                                            inherit: false,
-                                            fontSize: height / 74.666,
-                                            fontWeight: FontWeight.w400,
-                                            overflow: TextOverflow.ellipsis,
-                                            color: const Color(0xFFDFDFDF),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
                                   Container(
                                     alignment: Alignment.center,
@@ -298,14 +296,14 @@ class DetailProductScreen extends StatelessWidget {
                                       color: AppColor.primaryColor
                                           .withOpacity(0.1),
                                     ),
-                                    child: Wrap(
+                                    child: Row(
                                       children: [
                                         Icon(
                                           Icons.star,
                                           size: height / 42.666,
                                           color: AppColor.primaryColor,
                                         ),
-                                        LargeText(
+                                        BigText(
                                           largeText: "5",
                                           fontSize: height / 59.733,
                                           color: AppColor.primaryColor,
@@ -318,7 +316,7 @@ class DetailProductScreen extends StatelessWidget {
                             );
                           },
                           separatorBuilder: (_, __) {
-                            return verticalHeight(height / 44.8);
+                            return verticalSpace(height / 44.8);
                           },
                         )
                       ],

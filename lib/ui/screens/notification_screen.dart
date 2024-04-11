@@ -16,9 +16,13 @@ class NotificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: AppColor.backgroundColor0d0d,
         body: BodyBackground(
           child: Padding(
-            padding: const EdgeInsets.all(12).copyWith(bottom: 0),
+            padding: EdgeInsets.symmetric(
+                    horizontal: Dimensions.width25,
+                    vertical: Dimensions.height44)
+                .copyWith(bottom: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -28,12 +32,12 @@ class NotificationScreen extends StatelessWidget {
                     Get.back();
                   },
                 ),
-                verticalHeight(11),
+                verticalSpace(11),
                 Text(
                   "Notification",
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
-                verticalHeight(Dimensions.font12),
+                verticalSpace(Dimensions.font12),
                 Expanded(
                   child: ListView.builder(
                     shrinkWrap: true,
@@ -65,11 +69,11 @@ class NotificationScreen extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  LargeText(
+                                  BigText(
                                       fontSize: Dimensions.height16,
                                       largeText:
                                           "Your order has taken by driver"),
-                                  verticalHeight(7),
+                                  verticalSpace(7),
                                   const SmallText(smallText: "Recently")
                                 ],
                               ),

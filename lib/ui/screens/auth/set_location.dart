@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_grid_ui/ui/screens/auth/profile_set_up_completed.dart';
+import 'package:food_grid_ui/ui/screens/auth/ready_profile_screen.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:food_grid_ui/ui/utils/dimensions.dart';
 import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
@@ -30,17 +30,17 @@ class SetLocationScreen extends StatelessWidget {
                   BackButtonWidget(onTab: () {
                     Get.back();
                   }),
-                  verticalHeight(Dimensions.height20),
-                  LargeText(
+                  verticalSpace(Dimensions.height20),
+                  BigText(
                     largeText: "Set Your Location",
                     fontSize: Dimensions.width25,
                   ),
-                  verticalHeight(Dimensions.height16),
+                  verticalSpace(Dimensions.height16),
                   SmallText(
                       fontSize: Dimensions.font12,
                       smallText:
                           "This data will be displayed in your account\n profile for security"),
-                  verticalHeight(Dimensions.height70),
+                  verticalSpace(Dimensions.height70),
                   Container(
                     height: Dimensions.height187,
                     width: double.infinity,
@@ -69,7 +69,7 @@ class SetLocationScreen extends StatelessWidget {
                                 fill: 0.8,
                               ),
                             ),
-                            LargeText(
+                            BigText(
                               largeText: "Your Locations",
                               fontSize: Dimensions.height16,
                             ),
@@ -96,7 +96,7 @@ class SetLocationScreen extends StatelessWidget {
                               Color(0xFF404040),
                             ),
                           ),
-                          child: LargeText(
+                          child: BigText(
                             largeText: "Set Location",
                             fontSize: Dimensions.height16,
                           ),
@@ -104,14 +104,14 @@ class SetLocationScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  verticalHeight(30),
+                  verticalSpace(30),
                   Center(
                     child: ElevatedButtonWidget(
                       text: "Next",
                       buttonBackGrounColor: AppColor.primaryColor,
                       onTab: () {
                         Get.to(
-                          () => const ProfileSetpuCompleted(),
+                          () => const ReadyProfileScreen(),
                         );
                       },
                     ),

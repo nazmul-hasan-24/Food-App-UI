@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_grid_ui/ui/screens/main_bottom_nav/cart_screen.dart';
 import 'package:food_grid_ui/ui/utils/assets_path/images_path.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:food_grid_ui/ui/utils/dimensions.dart';
@@ -17,7 +18,7 @@ class VoucherPromoScreen extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
     final double width = size.width;
     final double height = size.height;
-    int index = 0;
+    // int index = 0;
     return Scaffold(
       backgroundColor: AppColor.backgroundColor0d0d,
       body: BodyBackground(
@@ -33,12 +34,12 @@ class VoucherPromoScreen extends StatelessWidget {
                     Get.back();
                   },
                 ),
-                verticalHeight(30),
-                const LargeText(
+                verticalSpace(30),
+                const BigText(
                   largeText: "Voucher Promo",
                   fontSize: 25,
                 ),
-                verticalHeight(20),
+                verticalSpace(20),
                 Expanded(
                   child: ListView.separated(
                     itemCount: 5,
@@ -72,11 +73,11 @@ class VoucherPromoScreen extends StatelessWidget {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                verticalHeight(Dimensions.height30),
+                                verticalSpace(Dimensions.height30),
                                 SizedBox(
                                   height: Dimensions.height60,
                                   width: Dimensions.width167,
-                                  child: LargeText(
+                                  child: BigText(
                                     fontSize: width / 19.2,
                                     fontWeight: FontWeight.w700,
                                     largeText: "Special Deal For Octorber",
@@ -85,7 +86,7 @@ class VoucherPromoScreen extends StatelessWidget {
                                         : const Color(0xFF6B3A5B),
                                   ),
                                 ),
-                                verticalHeight(Dimensions.height13),
+                                verticalSpace(Dimensions.height13),
                                 Container(
                                   alignment: Alignment.center,
                                   width: width / 3.7,
@@ -103,7 +104,7 @@ class VoucherPromoScreen extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  child: LargeText(
+                                  child: BigText(
                                     largeText: "Buy now",
                                     fontSize: 15,
                                     fontWeight: FontWeight.w700,
@@ -119,7 +120,7 @@ class VoucherPromoScreen extends StatelessWidget {
                       );
                     },
                     separatorBuilder: (_, __) {
-                      return verticalHeight(10);
+                      return verticalSpace(10);
                     },
                   ),
                 ),
@@ -127,7 +128,9 @@ class VoucherPromoScreen extends StatelessWidget {
                   height: Dimensions.height60,
                   text: ("Check Out"),
                   textColour: AppColor.backgroundColor0d0d,
-                  onTab: () {},
+                  onTab: () => Get.to(
+                    () => const CartScreen(),
+                  ),
                   width: double.infinity,
                 )
               ],

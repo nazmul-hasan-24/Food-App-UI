@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_grid_ui/ui/screens/auth/photo_setup_screen.dart';
+import 'package:food_grid_ui/ui/screens/auth/photo_preview_screen.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:food_grid_ui/ui/utils/dimensions.dart';
 import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
@@ -31,17 +31,17 @@ class UploadImageScreen extends StatelessWidget {
                   BackButtonWidget(onTab: () {
                     Get.back();
                   }),
-                  verticalHeight(Dimensions.height20),
-                  LargeText(
+                  verticalSpace(Dimensions.height20),
+                  BigText(
                     largeText: "Payment Method",
                     fontSize: Dimensions.width25,
                   ),
-                  verticalHeight(Dimensions.height16),
+                  verticalSpace(Dimensions.height16),
                   SmallText(
                       fontSize: Dimensions.font12,
                       smallText:
                           "This data will be displayed in your account\n profile for security"),
-                  verticalHeight(Dimensions.height40),
+                  verticalSpace(Dimensions.height40),
                   Container(
                     height: 138,
                     width: double.infinity,
@@ -60,14 +60,14 @@ class UploadImageScreen extends StatelessWidget {
                             size: Dimensions.height50,
                           ),
                         ),
-                        LargeText(
+                        BigText(
                           largeText: "Form Gallery",
                           fontSize: Dimensions.height14,
                         ),
                       ],
                     ),
                   ),
-                  verticalHeight(Dimensions.height20),
+                  verticalSpace(Dimensions.height20),
                   Container(
                     height: 138,
                     width: double.infinity,
@@ -86,21 +86,21 @@ class UploadImageScreen extends StatelessWidget {
                             size: Dimensions.height50,
                           ),
                         ),
-                        LargeText(
+                        BigText(
                           largeText: "Take Photo",
                           fontSize: Dimensions.height14,
                         ),
                       ],
                     ),
                   ),
-                  verticalHeight(Dimensions.height40),
+                  verticalSpace(Dimensions.height40),
                   Center(
                     child: ElevatedButtonWidget(
                       text: "Next",
                       textColour: AppColor.backgroundColor0d0d,
                       buttonBackGrounColor: AppColor.primaryColor,
                       onTab: () {
-                        Get.to(() => const PhotoSetupScreen());
+                        Get.to(() => const PhotoPreviewScreen());
                       },
                     ),
                   )

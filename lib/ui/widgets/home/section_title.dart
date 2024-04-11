@@ -12,7 +12,7 @@ class SectionTitle extends StatelessWidget {
       // alignment: WrapAlignment.spaceBetween,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        LargeText(
+        BigText(
           largeText: title,
           fontSize: 15,
         ),

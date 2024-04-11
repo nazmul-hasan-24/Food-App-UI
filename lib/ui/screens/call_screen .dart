@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_grid_ui/ui/screens/review_screens/deliver_screen.dart';
+import 'package:food_grid_ui/ui/screens/review_screens/finish_order_screen.dart';
 import 'package:food_grid_ui/ui/utils/assets_path/images_path.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
@@ -9,8 +9,8 @@ import 'package:food_grid_ui/ui/widgets/large_text.dart';
 import 'package:food_grid_ui/ui/widgets/small_text.dart';
 import 'package:get/get.dart';
 
-class TalkingScreen extends StatelessWidget {
-  const TalkingScreen({super.key, required this.name});
+class CallScreen extends StatelessWidget {
+  const CallScreen({super.key, required this.name});
   final String name;
 
   @override
@@ -19,6 +19,7 @@ class TalkingScreen extends StatelessWidget {
     // final width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
+        backgroundColor: AppColor.backgroundColor0d0d,
         body: BodyBackground(
           child: Padding(
             padding: const EdgeInsets.all(12.0).copyWith(top: 120, bottom: 70),
@@ -52,26 +53,31 @@ class TalkingScreen extends StatelessWidget {
                     // ),
                   ),
                 ),
-                verticalHeight(height * 0.025),
-                LargeText(largeText: name),
-                verticalHeight(height * 0.025),
+                verticalSpace(height * 0.025),
+                BigText(largeText: name),
+                verticalSpace(height * 0.025),
                 const SmallText(smallText: "15.6 Min"),
-                verticalHeight(height * 0.2),
+                verticalSpace(height * 0.2),
                 Wrap(
                   spacing: 15,
                   children: [
-                    filledButtonWidget(
-                        onPress: () {
-                          Get.to(() => const DeliverScreen());
-                        },
-                        widget: const Icon(
-                          Icons.volume_off,
-                        ),
-                        color: AppColor.primaryColor),
-                    filledButtonWidget(
-                        onPress: () {},
-                        widget: const Text('X'),
-                        color: Colors.red)
+                    iconButtonWidget(
+                      onPress: () {},
+                      widget: const Icon(
+                        Icons.volume_off,
+                        color: Color(0xFFFFCC00),
+                      ),
+                      color: const Color(0xFF261F00),
+                    ),
+                    iconButtonWidget(
+                      onPress: () {
+                        Get.to(
+                          () => const FinishOrderScreen(),
+                        );
+                      },
+                      widget: const Text('X'),
+                      color: const Color(0xFFFF4B4B),
+                    )
                   ],
                 )
               ],

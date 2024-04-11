@@ -11,8 +11,8 @@ import 'package:food_grid_ui/ui/widgets/large_text.dart';
 import 'package:food_grid_ui/ui/widgets/small_text.dart';
 import 'package:get/get.dart';
 
-class PhotoSetupScreen extends StatelessWidget {
-  const PhotoSetupScreen({super.key});
+class PhotoPreviewScreen extends StatelessWidget {
+  const PhotoPreviewScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,16 +31,16 @@ class PhotoSetupScreen extends StatelessWidget {
                   BackButtonWidget(onTab: () {
                     Get.back();
                   }),
-                  verticalHeight(Dimensions.height20),
-                  LargeText(
+                  verticalSpace(Dimensions.height20),
+                  BigText(
                       largeText: "Payment Method",
                       fontSize: Dimensions.width25),
-                  verticalHeight(Dimensions.height16),
+                  verticalSpace(Dimensions.height16),
                   SmallText(
                       fontSize: Dimensions.font12,
                       smallText:
                           "This data will be displayed in your account\n profile for security"),
-                  verticalHeight(Dimensions.height40),
+                  verticalSpace(Dimensions.height40),
                   Center(
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(Dimensions.font12),
@@ -51,7 +51,7 @@ class PhotoSetupScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  verticalHeight(Dimensions.height40),
+                  verticalSpace(Dimensions.height40),
                   Center(
                     child: ElevatedButtonWidget(
                       buttonBackGrounColor: AppColor.primaryColor,

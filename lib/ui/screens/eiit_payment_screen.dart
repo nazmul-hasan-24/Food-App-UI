@@ -30,30 +30,30 @@ class EditPaymentScreen extends StatelessWidget {
                 BackButtonWidget(onTab: () {
                   Get.back();
                 }),
-                verticalHeight(Dimensions.height20),
-                LargeText(
+                verticalSpace(Dimensions.height20),
+                BigText(
                   largeText: "Payment",
                   fontSize: Dimensions.width25,
                 ),
-                verticalHeight(Dimensions.height16),
-                verticalHeight(Dimensions.height22),
+                verticalSpace(Dimensions.height16),
+                verticalSpace(Dimensions.height22),
                 PaymentWidget(
                   imageName: ImagePath.visa,
                   imageHeight: Dimensions.height16,
                   text: '2121 6543 8989 ****',
                 ),
-                verticalHeight(Dimensions.height20),
+                verticalSpace(Dimensions.height20),
                 PaymentWidget(
                   imageName: ImagePath.paypal,
                   imageHeight: Dimensions.height22,
                 ),
-                verticalHeight(Dimensions.height20),
+                verticalSpace(Dimensions.height20),
                 PaymentWidget(
                   imageName: ImagePath.payoneer,
                   text: '2121 6543 8989 ****',
                   imageHeight: Dimensions.height30,
                 ),
-                verticalHeight(Dimensions.height40),
+                verticalSpace(Dimensions.height40),
                 Center(
                   child: ElevatedButtonWidget(
                     text: "Next",

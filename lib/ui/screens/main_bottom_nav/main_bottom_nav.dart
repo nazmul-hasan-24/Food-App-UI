@@ -41,18 +41,18 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
             alignment: Alignment.bottomCenter,
             child: Container(
               margin: EdgeInsets.symmetric(
-                horizontal: Dimensions.width25,
-              ).copyWith(bottom: Dimensions.height14),
+                horizontal: Dimensions.width12,
+              ).copyWith(bottom: Dimensions.height18),
               padding: EdgeInsets.symmetric(
                 horizontal: Dimensions.width15,
-                vertical: Dimensions.height18,
+                // vertical: Dimensions.height18,
               ),
               decoration: BoxDecoration(
                   color: AppColor.backgroundColor2525,
                   borderRadius: BorderRadius.circular(
                     Dimensions.height18,
                   )),
-              height: 70,
+              height: Dimensions.height70,
               child: GetBuilder<MainBottomNavController>(
                 builder: (mainBottomNavController) {
                   return GNav(
@@ -83,9 +83,9 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
 
                     tabBackgroundColor: const Color(0xFF4B4427)
                         .withOpacity(0.28), // selected tab background color
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 25,
-                      vertical: 8,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: Dimensions.width15,
+                      vertical: Dimensions.height13,
                     ), // navigation bar padding
                     tabs: [
                       GButton(
@@ -111,7 +111,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
                             () => const CartScreen(),
                           );
                         },
-                        padding: EdgeInsets.all(11),
+                        // padding: EdgeInsets.all(11),
                         icon: Icons.shopping_cart_checkout,
                         text: 'Cart',
                         iconColor: AppColor.primaryColor,

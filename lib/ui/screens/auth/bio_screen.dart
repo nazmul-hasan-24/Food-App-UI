@@ -11,8 +11,8 @@ import 'package:food_grid_ui/ui/widgets/small_text.dart';
 import 'package:food_grid_ui/ui/widgets/text_form_field.dart';
 import 'package:get/get.dart';
 
-class BioPage extends StatelessWidget {
-  const BioPage({super.key});
+class BioScreen extends StatelessWidget {
+  const BioScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,32 +30,32 @@ class BioPage extends StatelessWidget {
                   BackButtonWidget(onTab: () {
                     Get.back();
                   }),
-                  verticalHeight(Dimensions.height20),
-                  LargeText(
+                  verticalSpace(Dimensions.height20),
+                  BigText(
                     largeText: "Fill in your bio to get\nstarted",
                     fontSize: Dimensions.width25,
                   ),
-                  verticalHeight(Dimensions.height16),
+                  verticalSpace(Dimensions.height16),
                   SmallText(
                       fontSize: Dimensions.font12,
                       smallText:
                           "This data will be displayed in your account\nprofile for secuity"),
-                  verticalHeight(Dimensions.height22),
+                  verticalSpace(Dimensions.height22),
                   const CustomTextFormField(
                     hintText: "First Name",
                     textInputType: TextInputType.name,
                   ),
-                  verticalHeight(Dimensions.font12),
+                  verticalSpace(Dimensions.font12),
                   const CustomTextFormField(
                     hintText: "Last Name",
                     textInputType: TextInputType.text,
                   ),
-                  verticalHeight(Dimensions.font12),
+                  verticalSpace(Dimensions.font12),
                   const CustomTextFormField(
                     hintText: "Mobile Number",
                     textInputType: TextInputType.text,
                   ),
-                  verticalHeight(Dimensions.height40),
+                  verticalSpace(Dimensions.height40),
                   Center(
                     child: ElevatedButtonWidget(
                       text: "Next",

@@ -32,4 +32,6 @@ class ImagePath {
   static String visa = _imagePath(imageName: 'visa');
   static String paypal = _imagePath(imageName: 'paypal');
   static String payoneer = _imagePath(imageName: 'payoneer');
+  static String mentor = _imagePath(imageName: 'mentor');
+  static String trackBak = _imagePath(imageName: 'track_bak');
 }

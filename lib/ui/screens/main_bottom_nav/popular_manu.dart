@@ -1,53 +1,57 @@
 import 'package:flutter/material.dart';
 import 'package:food_grid_ui/presentation/controllers/main_nav_controller.dart';
+import 'package:food_grid_ui/ui/screens/explore_menu_screen.dart';
 import 'package:food_grid_ui/ui/screens/main_bottom_nav/cart_screen.dart';
 import 'package:food_grid_ui/ui/screens/main_bottom_nav/message_screen.dart';
 import 'package:food_grid_ui/ui/screens/main_bottom_nav/profile_screen.dart';
 import 'package:food_grid_ui/ui/utils/colors.dart';
 import 'package:food_grid_ui/ui/utils/dimensions.dart';
-import 'package:food_grid_ui/ui/utils/helper_widgets.dart';
-import 'package:food_grid_ui/ui/widgets/app_bar.dart';
 import 'package:food_grid_ui/ui/widgets/body_background.dart';
-import 'package:food_grid_ui/ui/widgets/home/menu_card_widget.dart';
-import 'package:food_grid_ui/ui/widgets/search_widget.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-class PopularMenuScreen extends StatefulWidget {
-  const PopularMenuScreen({super.key, required this.title});
-  final String title;
+class PopularManuListScreenH extends StatefulWidget {
+  const PopularManuListScreenH({super.key, this.title});
+  final String? title;
 
   @override
-  State<PopularMenuScreen> createState() => _PopularMenuScreenState();
+  State<PopularManuListScreenH> createState() => _PopularManuListScreenHState();
 }
 
-class _PopularMenuScreenState extends State<PopularMenuScreen> {
+class _PopularManuListScreenHState extends State<PopularManuListScreenH> {
   final List<Widget> _screen = const [
-    PopularMenuLists(),
+    ExploreMenuScreen(),
     ProfileScreen(),
     CartScreen(),
     MessingScreen()
   ];
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+    return Scaffold(
+      backgroundColor: AppColor.backgroundColor0d0d,
+      body: BodyBackground(
+        child: Stack(
+          alignment: Alignment.bottomCenter,
           children: [
-            GetBuilder<MainBottomNavController>(builder: (controller) {
-              return Expanded(child: _screen[controller.currentIndex]);
-            }),
+            GetBuilder<MainBottomNavController>(
+              builder: (controller) {
+                return _screen[controller.currentIndex];
+              },
+            ),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 59, 59, 57),
-                borderRadius: BorderRadius.horizontal(
-                  right: Radius.circular(10),
-                  left: Radius.circular(10),
-                ),
+              margin: EdgeInsets.symmetric(
+                horizontal: Dimensions.width12,
+              ).copyWith(bottom: Dimensions.height18),
+              padding: EdgeInsets.symmetric(
+                horizontal: Dimensions.width15,
+                // vertical: Dimensions.height18,
               ),
-              height: 70,
+              decoration: BoxDecoration(
+                  color: AppColor.backgroundColor2525,
+                  borderRadius: BorderRadius.circular(
+                    Dimensions.height18,
+                  )),
+              height: Dimensions.height70,
               child: GetBuilder<MainBottomNavController>(
                 builder: (mainBottomNavController) {
                   return GNav(
@@ -121,54 +125,48 @@ class _PopularMenuScreenState extends State<PopularMenuScreen> {
   }
 }
 
-class PopularMenuLists extends StatelessWidget {
-  const PopularMenuLists({super.key, this.title = 'Popular'});
-  final String? title;
-  @override
-  Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    return Scaffold(
-      backgroundColor: AppColor.backgroundColor0d0d,
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: Dimensions.width25)
-            .copyWith(top: Dimensions.height44),
-        child: BodyBackground(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const AppBarWidget(),
-              verticalHeight(10),
-              Text(
-                title!,
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-              verticalHeight(10),
-              const SearchWidget(
-                text: ['Pizza x', 'Snadwich x'],
-              ),
-              verticalHeight(10),
-              Expanded(
-                child: ListView.separated(
-                  itemCount: 20,
-                  scrollDirection: Axis.vertical,
-                  shrinkWrap: true,
-                  primary: false,
-                  itemBuilder: (context, index) {
-                    return SizedBox(
-                      height: 150,
-                      width: width * 0.95,
-                      child: const PopularMenuCardWidget(),
-                    );
-                  },
-                  separatorBuilder: (_, __) {
-                    return verticalHeight(10);
-                  },
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+
+// class Star extends StatelessWidget {
+//   final Color color;
+//   final double size;
+//   const Star({super.key, required this.color, required this.size});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return SizedBox(
+//       height: size,
+//       width: size,
+//       child: CustomPaint(
+//         painter: _StarPainer(),
+//       ),
+//     );
+//   }
+// }
+
+// class _StarPainer extends CustomPainter {
+//   final Color color;
+//   _StarPainer(this.color)
+//   @override
+//   void paint(Canvas canvas, Size size) {
+//     final paint = Paint()..color = color;
+
+//     final path = Path()..moveTo(size.width * 0.5, 0)
+//     ..lineTo(size.width*0.618, size.height * 0.328, )
+//     ..lineTo(size.width, size.height * 0.382)
+//  ..lineTo(size.width * 0.691, size.height * 0.618)
+//  ..lineTo(size.width * 0.809, size.height)
+//  ..lineTo(size.width * 0.5, size.height * 0.7639)
+//  ..lineTo(size.width * 0.191, size.height)
+//  ..lineTo(size.width * 0.309, size.height * 0.618)
+//  ..lineTo(size.width * 0.309, size.height * 0.618)
+//  ..lineTo(0, size.height * 0.382)
+//  ..lineTo(size.width * 0.382, size.height * 0.382)
+//  ..close();
+//  canvas.drawPath(path, paint);
+//   }
+
+//   @override
+//   bool shouldRepaint(covariant CustomPainter oldDelegate) {
+//     return false;
+//   }
+// }

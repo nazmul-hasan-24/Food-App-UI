@@ -18,7 +18,7 @@ class Dimensions {
   static final double height8 = screenHeight / 112;
   static final height22 = screenHeight / 40.73;
   static final double height20 = screenHeight / 44.8;
-  static final height18 = screenHeight / 49.777;
+  static final height18 = screenHeight / 49.77;
   static final height16 = screenHeight / 56;
   static final height14 = screenHeight / 64;
   static final height13 = screenHeight / 68.923;
@@ -33,6 +33,9 @@ class Dimensions {
   static final double height180 = screenHeight / 4.9777777;
   static final double height15 = screenHeight / 59.733333;
   static final double height60 = screenHeight / 16.6;
+  static final double height125 = screenHeight / 7.168;
+  static final double height58 = screenHeight / 10.541;
+  static final double height98 = screenHeight / 9.1;
 
   // Radious
 
@@ -58,4 +61,8 @@ class Dimensions {
   static final double width30 = screenWidth / 13.8;
   static final double width167 = screenWidth / 2.479;
   static final double width100 = screenWidth / 4.14;
+  static final double width68 = screenWidth / 6.017;
+  static final double width112 = screenWidth / 3.696;
+  static final double width226 = screenWidth / 2.3;
+  static final double width81 = screenWidth / 5.111;
 }

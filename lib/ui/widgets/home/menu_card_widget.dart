@@ -43,7 +43,7 @@ class PopularMenuCardWidget extends StatelessWidget {
                   "Harbar Pancake",
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
-                verticalHeight(9),
+                verticalSpace(9),
                 const Text(
                   'Pizza king',
                   style: TextStyle(

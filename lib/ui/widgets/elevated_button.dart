@@ -27,21 +27,24 @@ class ElevatedButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.zero,
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(Dimensions.height10),
-          ),
-          backgroundColor: buttonBackGrounColor,
-          minimumSize: Size(width == 0 ? Dimensions.butonWidth157 : width!,
-              height == 0 ? Dimensions.buttonHeight51 : height),
+      style: ElevatedButton.styleFrom(
+        padding: EdgeInsets.zero,
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(Dimensions.height10),
         ),
-        onPressed: onTab,
-        child: LargeText(
-          fontSize: fontSize == 0 ? Dimensions.height16 : fontSize!,
-          largeText: text,
-          color: textColour!,
-        ));
+        backgroundColor: buttonBackGrounColor,
+        minimumSize: Size(
+          width == 0 ? Dimensions.butonWidth157 : width!,
+          height == 0 ? Dimensions.buttonHeight51 : height,
+        ),
+      ),
+      onPressed: onTab,
+      child: BigText(
+        fontSize: fontSize == 0 ? Dimensions.height16 : fontSize!,
+        largeText: text,
+        color: textColour!,
+      ),
+    );
   }
 }

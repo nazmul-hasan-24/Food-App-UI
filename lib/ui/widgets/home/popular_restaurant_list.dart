@@ -4,8 +4,8 @@ import 'package:food_grid_ui/ui/screens/detail_menu_screen.dart';
 import 'package:food_grid_ui/ui/widgets/home/menu_card_widget.dart';
 import 'package:get/get.dart';
 
-class PopularRestaurantList extends StatelessWidget {
-  const PopularRestaurantList({super.key});
+class MenuList extends StatelessWidget {
+  const MenuList({super.key});
 
   @override
   Widget build(BuildContext context) {
